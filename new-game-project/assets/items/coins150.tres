@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dug2jnlbap7ow"]
+
+[ext_resource type="SpriteFrames" uid="uid://7xfbnrqxjfy0" path="res://assets/style1/inventory/microphone.tres" id="1_bklfl"]
+[ext_resource type="Texture2D" uid="uid://d1poev3pa7y3o" path="res://assets/style1/inventory/coins_icon.png" id="2_lrgwe"]
+[ext_resource type="Script" uid="uid://bo4uyj27yi1sc" path="res://resources/quest/item.gd" id="3_2uofj"]
+
+[resource]
+script = ExtResource("3_2uofj")
+id = "Coins"
+quantity = 1500
+cost = 5
+desc = "Wow that's some cool purrency!"
+icon = ExtResource("2_lrgwe")
+animation = ExtResource("1_bklfl")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"

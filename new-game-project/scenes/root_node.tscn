@@ -1,73 +1,564 @@
-[gd_scene load_steps=26 format=3 uid="uid://by45oky1inesv"]
+[gd_scene load_steps=136 format=3 uid="uid://by45oky1inesv"]
 
-[ext_resource type="Script" uid="uid://cq5gk6r8b5xbq" path="res://scripts/root_node.gd" id="1_vhsfa"]
+[ext_resource type="Script" uid="uid://1ab5xprneeis" path="res://scripts/root_node.gd" id="1_vhsfa"]
 [ext_resource type="PackedScene" uid="uid://fw7bjbh6uerk" path="res://scenes/sprites/sandcat.tscn" id="1_ynfbw"]
-[ext_resource type="Shader" uid="uid://cwhd4l0bkkj52" path="res://assets/shaders/root_node.gdshader" id="2_j38m8"]
-[ext_resource type="Script" uid="uid://c0n2yjh5ptnxv" path="res://scripts/environment.gd" id="3_gwtxu"]
-[ext_resource type="Texture2D" uid="uid://c0n7qhnqki653" path="res://assets/style3/environment/cave_background.png" id="3_ldoum"]
 [ext_resource type="PackedScene" uid="uid://dve3kyehsa1vu" path="res://scenes/environment/floor.tscn" id="4_7b5fe"]
-[ext_resource type="PackedScene" uid="uid://ddgqfv4aut45v" path="res://scenes/environment/cave_1.tscn" id="4_jfjke"]
 [ext_resource type="PackedScene" uid="uid://l3llu6najks2" path="res://scenes/environment/platform.tscn" id="5_jfjke"]
+[ext_resource type="Script" uid="uid://in5pil2f4lhe" path="res://scripts/artstyle/island.gd" id="10_184fy"]
+[ext_resource type="Texture2D" uid="uid://d0cbb63ph3yhn" path="res://assets/style1/environment/island.png" id="10_yd5j6"]
 [ext_resource type="PackedScene" uid="uid://cfmpgavgq2j8f" path="res://scenes/environment/brekable_wall.tscn" id="11_i6oe7"]
-[ext_resource type="PackedScene" uid="uid://bdfhxuom6gf80" path="res://scenes/environment/waterfall.tscn" id="11_t75in"]
+[ext_resource type="Texture2D" uid="uid://dagmpmf3qiskl" path="res://assets/style1/environment/island_overlay.png" id="11_yd5j6"]
 [ext_resource type="PackedScene" uid="uid://btwvg4nxvbg4u" path="res://scenes/UI/menu.tscn" id="12_65w77"]
 [ext_resource type="PackedScene" uid="uid://bnu0wl2c77mm3" path="res://scenes/environment/breaking_platform.tscn" id="12_b33qr"]
+[ext_resource type="Script" uid="uid://bledpmkv3m7pu" path="res://scripts/artstyle/island_overlays.gd" id="12_yd5j6"]
+[ext_resource type="Script" uid="uid://e321q3av18v8" path="res://scripts/artstyle/backgrounds.gd" id="13_urxvd"]
 [ext_resource type="PackedScene" uid="uid://cw0gurmpmicd1" path="res://scenes/sprites/static_crow.tscn" id="14_e6b1x"]
+[ext_resource type="Texture2D" uid="uid://bwebtot8ymiuh" path="res://assets/style1/environment/cave_background.png" id="14_ol6ib"]
+[ext_resource type="Script" uid="uid://dpjufp8s4g4d6" path="res://scripts/artstyle/cave_background.gd" id="15_lgo0g"]
 [ext_resource type="PackedScene" uid="uid://b6u584hg134hx" path="res://scenes/sprites/moving_crow.tscn" id="15_vpben"]
+[ext_resource type="Texture2D" uid="uid://bwsgadvs3icxp" path="res://assets/style1/other/lata_pile.png" id="15_yd5j6"]
 [ext_resource type="PackedScene" uid="uid://c3m1bst2dy0fq" path="res://scenes/sprites/npc.tscn" id="16_wwi2v"]
-[ext_resource type="SpriteFrames" uid="uid://dm5ikc78j0vj6" path="res://assets/style1/sprites/mocha.tres" id="17_ap4d7"]
+[ext_resource type="Resource" uid="uid://can121qlk5ec4" path="res://assets/items/feather.tres" id="17_tmwmb"]
 [ext_resource type="Script" uid="uid://gonl60qxgtig" path="res://resources/dialogue/dialogue.gd" id="18_65w77"]
-[ext_resource type="SpriteFrames" uid="uid://bune66ffk6i8v" path="res://assets/style1/sprites/marigold.tres" id="18_motqh"]
-[ext_resource type="Script" uid="uid://cu2lpn3ktywa3" path="res://resources/quest/quest.gd" id="19_motqh"]
-[ext_resource type="Script" uid="uid://orelpqn6cckw" path="res://resources/quest/objectives.gd" id="19_qvdbn"]
+[ext_resource type="PackedScene" uid="uid://bedku0hjowicc" path="res://scenes/other/info_overlay.tscn" id="19_c46o2"]
+[ext_resource type="Script" uid="uid://kx4q8ed2cbkx" path="res://scenes/lata_pile.gd" id="19_lgo0g"]
+[ext_resource type="PackedScene" uid="uid://dvmrxg5higavr" path="res://scenes/other/item.tscn" id="21_74gyt"]
+[ext_resource type="PackedScene" uid="uid://2qa6553mwvko" path="res://scenes/sprites/shop_seller.tscn" id="21_tfi8t"]
+[ext_resource type="SpriteFrames" uid="uid://cpu6bllvi7oj5" path="res://assets/style1/inventory/coins_animation.tres" id="22_cblgy"]
+[ext_resource type="Texture2D" uid="uid://d1poev3pa7y3o" path="res://assets/style1/inventory/coins_icon.png" id="23_ydpvs"]
+[ext_resource type="Script" uid="uid://bo4uyj27yi1sc" path="res://resources/quest/item.gd" id="24_w0q1k"]
+[ext_resource type="PackedScene" uid="uid://825nv3x0dyxd" path="res://scenes/sprites/kids.tscn" id="26_fekcl"]
+[ext_resource type="Texture2D" uid="uid://naa66r8ngehu" path="res://assets/style1/environment/waterfall.png" id="26_immi7"]
+[ext_resource type="Texture2D" uid="uid://djvca2ky8m55r" path="res://assets/style1/environment/backgrounds1.png" id="27_184fy"]
+[ext_resource type="Texture2D" uid="uid://cn0c4nrehi04u" path="res://assets/style1/environment/backgrounds1.5.png" id="27_ol6ib"]
+[ext_resource type="SpriteFrames" uid="uid://bc5e2ftw7xtyy" path="res://assets/sprite_animations/nutmeg.tres" id="27_qt2b5"]
+[ext_resource type="PackedScene" uid="uid://bqxbt3y584kxk" path="res://scenes/other/fishing.tscn" id="28_fekcl"]
+[ext_resource type="Texture2D" uid="uid://3en08hq6d1e1" path="res://assets/style1/environment/backgrounds2.5.png" id="28_lgo0g"]
+[ext_resource type="Texture2D" uid="uid://buk6qt60t04e6" path="res://assets/style1/environment/spike2.png" id="28_nb1gb"]
+[ext_resource type="Texture2D" uid="uid://u5h348bti31c" path="res://assets/style1/environment/backgrounds2.png" id="28_yd5j6"]
+[ext_resource type="Texture2D" uid="uid://di5tusf2tx082" path="res://assets/style1/environment/spike3.png" id="29_c46o2"]
+[ext_resource type="SpriteFrames" uid="uid://u808mvvg8ye0" path="res://assets/sprite_animations/mocha.tres" id="29_wrl4d"]
+[ext_resource type="Texture2D" uid="uid://ch62ymg0vqxqk" path="res://assets/style1/environment/spike4.png" id="30_1dhvn"]
+[ext_resource type="Script" uid="uid://cu2lpn3ktywa3" path="res://resources/quest/quest.gd" id="30_v0lh2"]
+[ext_resource type="Texture2D" uid="uid://du5p020yjdlf" path="res://assets/style3/environment/Untitled_Artwork-1 31.png" id="31_5r6wc"]
+[ext_resource type="Texture2D" uid="uid://c70f6h2iocxxf" path="res://assets/style1/environment/spike5.png" id="31_184fy"]
+[ext_resource type="AudioStream" uid="uid://byqpvwl75qs25" path="res://assets/music/waterflall-335776.mp3" id="31_ch8bp"]
+[ext_resource type="PackedScene" uid="uid://c16lo6r8dummv" path="res://scenes/environment/waterfall.tscn" id="31_mjr4y"]
+[ext_resource type="Texture2D" uid="uid://bv3v2k0hye5m5" path="res://assets/style2/environment/waterfall.png" id="31_npree"]
+[ext_resource type="Shader" uid="uid://dugxavqka1avt" path="res://scripts/cave_background.gdshader" id="31_qt2b5"]
+[ext_resource type="Script" uid="uid://orelpqn6cckw" path="res://resources/quest/objectives.gd" id="31_tmwmb"]
+[ext_resource type="Script" uid="uid://hsv2e1aa41ys" path="res://scripts/artstyle/out_waterfall.gd" id="32_ch8bp"]
+[ext_resource type="Texture2D" uid="uid://c16xd3vecfx1f" path="res://assets/style3/environment/Untitled_Artwork-2 31.png" id="32_cxmmu"]
+[ext_resource type="SpriteFrames" uid="uid://coaixnue2qqiu" path="res://assets/sprite_animations/misha.tres" id="32_slt5f"]
+[ext_resource type="SpriteFrames" uid="uid://djusgf8fb2n0j" path="res://assets/sprite_animations/brute.tres" id="33_ijaif"]
+[ext_resource type="Resource" uid="uid://c0qij7y37gk3g" path="res://assets/items/collar.tres" id="33_stsei"]
+[ext_resource type="Resource" uid="uid://dug2jnlbap7ow" path="res://assets/items/coins150.tres" id="33_v0lh2"]
+[ext_resource type="Texture2D" uid="uid://bqistwdjnwivb" path="res://assets/style3/environment/Untitled_Artwork-3 29.png" id="33_w4vym"]
+[ext_resource type="SpriteFrames" uid="uid://de20ohsqph6iw" path="res://assets/sprite_animations/mellow.tres" id="34_2ldkq"]
+[ext_resource type="Resource" uid="uid://q2eye3jr7blc" path="res://assets/items/lights.tres" id="34_v4tdy"]
+[ext_resource type="Resource" uid="uid://ccumk3bmjaeqc" path="res://assets/items/snack.tres" id="35_3ime7"]
+[ext_resource type="SpriteFrames" uid="uid://bnyiv64q1hehs" path="res://assets/sprite_animations/kiwi.tres" id="35_v0lh2"]
+[ext_resource type="Script" uid="uid://bjueamiawu8b" path="res://scripts/artstyle/all_spikes.gd" id="36_mu7i0"]
+[ext_resource type="SpriteFrames" uid="uid://dnj6le3m8i37p" path="res://assets/sprite_animations/mango.tres" id="36_tmwmb"]
+[ext_resource type="SpriteFrames" uid="uid://d6j0sjjsi62d" path="res://assets/sprite_animations/marigold.tres" id="37_0p4ep"]
+[ext_resource type="SpriteFrames" uid="uid://b5mpndlnwdijp" path="res://assets/sprite_animations/cinnamon.tres" id="38_4d2nn"]
+[ext_resource type="PackedScene" uid="uid://d4igigdspfakk" path="res://scenes/sprites/bodyguard.tscn" id="42_4d2nn"]
+[ext_resource type="Resource" uid="uid://c7i8vrp5je40q" path="res://assets/items/coins.tres" id="43_4d2nn"]
+[ext_resource type="Texture2D" uid="uid://dbxcjyc3gl836" path="res://assets/style1/environment/spike1.png" id="47_stsei"]
+[ext_resource type="AudioStream" uid="uid://ckq7hrkrnu1jf" path="res://assets/music/meow4.mp3" id="49_h4qr7"]
+[ext_resource type="Resource" uid="uid://yipcbs2geog6" path="res://assets/items/cables.tres" id="52_yd5j6"]
+[ext_resource type="Resource" uid="uid://ivhi1fokf3nr" path="res://assets/items/microphone.tres" id="53_ol6ib"]
+[ext_resource type="AudioStream" uid="uid://cle2chvbhw7i5" path="res://assets/music/meow8.mp3" id="55_uhxb7"]
+[ext_resource type="Resource" uid="uid://bemvvjmj4qxsh" path="res://assets/items/shop_feather.tres" id="57_q0jin"]
+[ext_resource type="PackedScene" uid="uid://cxlnm2grf67c4" path="res://scenes/other/shiny_crow.tscn" id="58_184fy"]
+[ext_resource type="AudioStream" uid="uid://d30hdrjjjy3um" path="res://assets/music/meow6.mp3" id="61_csoom"]
+[ext_resource type="AudioStream" uid="uid://cav40m1dqw3kg" path="res://assets/music/meow5.mp3" id="63_7tvkr"]
+[ext_resource type="AudioStream" uid="uid://dw30wtdb58tl2" path="res://assets/music/meow2.mp3" id="63_c4v7b"]
+[ext_resource type="AudioStream" uid="uid://bkskiv4rpvkdg" path="res://assets/music/meow9.mp3" id="64_cmjn7"]
+[ext_resource type="AudioStream" uid="uid://csnrybu83uq6c" path="res://assets/music/meow.mp3" id="64_w4vym"]
+[ext_resource type="AudioStream" uid="uid://dybxjjgcixhsk" path="res://assets/music/meow3.mp3" id="67_7xfyx"]
+[ext_resource type="AudioStream" uid="uid://sjp8jgnxcti8" path="res://assets/music/distant-breeze-241047.mp3" id="68_cxmmu"]
+[ext_resource type="AudioStream" uid="uid://2jjw5hk1mw3v" path="res://assets/music/small-waves-onto-the-sand-143040.mp3" id="69_w4vym"]
+[ext_resource type="Resource" uid="uid://321x8ivv05b8" path="res://assets/items/poppies.tres" id="70_ykduy"]
+[ext_resource type="AudioStream" uid="uid://bmn8ddv6pf3ui" path="res://assets/music/meow7.mp3" id="74_cmjn7"]
+[ext_resource type="PackedScene" uid="uid://x3sbuodqx373" path="res://scenes/other/end_game.tscn" id="79_436vp"]
+[ext_resource type="VideoStream" uid="uid://c74xomtwu3ik2" path="res://assets/start-of-game-bl71xt.ogv" id="80_8rv70"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l3gbx"]
-shader = ExtResource("2_j38m8")
-shader_parameter/tile_scale = 3.0
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_brfk8"]
+distance = 12.0
 
-[sub_resource type="Resource" id="Resource_motqh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wrl4d"]
+shader = ExtResource("31_qt2b5")
+shader_parameter/tile_scale = 8.0
+
+[sub_resource type="Curve2D" id="Curve2D_brfk8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -9.40063, 57.291, 0, 0, 0, 0, 661.615, -91.7256, 0, 0, 0, 0, -9.40063, 57.291)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_qt2b5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3287.1, 196.786, 0, 0, 0, 0, -3276.39, 1039.64, 0, 0, 0, 0, -3287.1, 196.786)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_wrl4d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5885, 6941, 0, 0, 0, 0, 3762, 6935, 0, 0, 0, 0, 5885, 6941)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_slt5f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8636, 7299, 0, 0, 0, 0, 7826, 8026, 0, 0, 0, 0, 8635, 7300)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_d4po7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 10437, 8035, 0, 0, 0, 0, 9031, 8036, 0, 0, 0, 0, 10438, 8035)
+}
+point_count = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4yja"]
+atlas = ExtResource("26_immi7")
+region = Rect2(1868, 0, 1868, 3180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jipf2"]
+atlas = ExtResource("26_immi7")
+region = Rect2(0, 0, 1868, 3180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stsei"]
+atlas = ExtResource("26_immi7")
+region = Rect2(3736, 0, 1868, 3180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r6wc"]
+atlas = ExtResource("31_npree")
+region = Rect2(1868, 0, 1868, 3180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxmmu"]
+atlas = ExtResource("31_npree")
+region = Rect2(0, 0, 1868, 3180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4vym"]
+atlas = ExtResource("31_npree")
+region = Rect2(3736, 0, 1868, 3180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4tdy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4yja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jipf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stsei")
+}],
+"loop": true,
+"name": &"default1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r6wc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxmmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4vym")
+}],
+"loop": true,
+"name": &"default2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_5r6wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_cxmmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_w4vym")
+}],
+"loop": true,
+"name": &"default3",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_5n7hk"]
+script = ExtResource("24_w0q1k")
+id = "Coins"
+quantity = 20
+cost = 20
+desc = "Wow that's some cool purrency!"
+icon = ExtResource("23_ydpvs")
+animation = ExtResource("22_cblgy")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"
+
+[sub_resource type="Resource" id="Resource_c4v7b"]
+script = ExtResource("24_w0q1k")
+id = "Coins"
+quantity = 5
+cost = 5
+desc = "Wow that's some cool purrency!"
+icon = ExtResource("23_ydpvs")
+animation = ExtResource("22_cblgy")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"
+
+[sub_resource type="Resource" id="Resource_h4qr7"]
+script = ExtResource("24_w0q1k")
+id = "Coins"
+quantity = 30
+cost = 30
+desc = "Wow that's some cool purrency!"
+icon = ExtResource("23_ydpvs")
+animation = ExtResource("22_cblgy")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"
+
+[sub_resource type="Resource" id="Resource_7xfyx"]
+script = ExtResource("24_w0q1k")
+id = "Coins"
+quantity = 15
+cost = 15
+desc = "Wow that's some cool purrency!"
+icon = ExtResource("23_ydpvs")
+animation = ExtResource("22_cblgy")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"
+
+[sub_resource type="Resource" id="Resource_7tvkr"]
+script = ExtResource("24_w0q1k")
+id = "Coins"
+quantity = 15
+cost = 15
+desc = "Wow that's some cool purrency!"
+icon = ExtResource("23_ydpvs")
+animation = ExtResource("22_cblgy")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"
+
+[sub_resource type="Resource" id="Resource_qt2b5"]
 script = ExtResource("18_65w77")
 dialogue = {}
 metadata/_custom_type_script = "uid://gonl60qxgtig"
 
-[sub_resource type="Resource" id="Resource_74gyt"]
-script = ExtResource("19_qvdbn")
-id = "1"
-description = "talk "
-target_id = "Marigold"
+[sub_resource type="Resource" id="Resource_fl73q"]
+script = ExtResource("31_tmwmb")
+id = "Nutmeg0"
+description = "Scpre 20+"
+target_id = ""
+target_type = "score"
+target_dialogue = ""
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+next_dialogue = "Nutmeg2.0"
+metadata/_custom_type_script = "uid://orelpqn6cckw"
+
+[sub_resource type="Resource" id="Resource_ia7qy"]
+script = ExtResource("30_v0lh2")
+quest_id = "Nutmeg0"
+quest_name = "Score 20+"
+state = "not_started"
+objective = SubResource("Resource_fl73q")
+metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
+
+[sub_resource type="Resource" id="Resource_e7a4y"]
+script = ExtResource("18_65w77")
+dialogue = {}
+metadata/_custom_type_script = "uid://gonl60qxgtig"
+
+[sub_resource type="Resource" id="Resource_0p4ep"]
+script = ExtResource("31_tmwmb")
+id = "Mocha0"
+description = "Talk to Nutmeg"
+target_id = "Nutmeg"
 target_type = "talk_to"
-target_dialogue = "Marigold2.0"
+target_dialogue = "Nutmeg"
 required_quantity = 0
 collected_quantity = 0
 is_completed = false
 next_dialogue = "Mocha2.0"
 metadata/_custom_type_script = "uid://orelpqn6cckw"
 
-[sub_resource type="Resource" id="Resource_plwfq"]
-script = ExtResource("19_motqh")
+[sub_resource type="Resource" id="Resource_4d2nn"]
+script = ExtResource("30_v0lh2")
 quest_id = "Mocha0"
-quest_name = "Talk to Marigold"
+quest_name = "Talk to Nutmeg"
 state = "not_started"
-objective = SubResource("Resource_74gyt")
+objective = SubResource("Resource_0p4ep")
 metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
 
-[sub_resource type="Resource" id="Resource_65w77"]
+[sub_resource type="Resource" id="Resource_v0lh2"]
+script = ExtResource("31_tmwmb")
+id = "Mocha1"
+description = "Talk to Mellow"
+target_id = "Mellow"
+target_type = "talk_to"
+target_dialogue = "Mellow"
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+next_dialogue = "Mocha3.0"
+metadata/_custom_type_script = "uid://orelpqn6cckw"
+
+[sub_resource type="Resource" id="Resource_tmwmb"]
+script = ExtResource("30_v0lh2")
+quest_id = "Mocha1"
+quest_name = "Talk to Mellow"
+state = "not_started"
+objective = SubResource("Resource_v0lh2")
+metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
+
+[sub_resource type="Resource" id="Resource_immi7"]
 script = ExtResource("18_65w77")
 dialogue = {}
 metadata/_custom_type_script = "uid://gonl60qxgtig"
 
+[sub_resource type="Resource" id="Resource_c46o2"]
+script = ExtResource("31_tmwmb")
+id = "Misha0"
+description = "Collect lights"
+target_id = "Lights"
+target_type = "collect"
+target_dialogue = ""
+required_quantity = 3
+collected_quantity = 0
+is_completed = false
+next_dialogue = "Misha2.0"
+metadata/_custom_type_script = "uid://orelpqn6cckw"
+
+[sub_resource type="Resource" id="Resource_1dhvn"]
+script = ExtResource("30_v0lh2")
+quest_id = "Misha0"
+quest_name = "Collect lights"
+state = "not_started"
+objective = SubResource("Resource_c46o2")
+metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
+
+[sub_resource type="Resource" id="Resource_184fy"]
+script = ExtResource("31_tmwmb")
+id = "Misha1"
+description = "collect cables"
+target_id = "Cables"
+target_type = "collect"
+target_dialogue = ""
+required_quantity = 5
+collected_quantity = 0
+is_completed = false
+next_dialogue = "Misha3.0"
+metadata/_custom_type_script = "uid://orelpqn6cckw"
+
+[sub_resource type="Resource" id="Resource_yd5j6"]
+script = ExtResource("30_v0lh2")
+quest_id = "Misha1"
+quest_name = "Collect cables"
+state = "not_started"
+objective = SubResource("Resource_184fy")
+metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
+
+[sub_resource type="Resource" id="Resource_ol6ib"]
+script = ExtResource("31_tmwmb")
+id = "Misha2"
+description = "collect microphone"
+target_id = "Microphone"
+target_type = "collect"
+target_dialogue = ""
+required_quantity = 1
+collected_quantity = 0
+is_completed = false
+next_dialogue = "Misha4.0"
+metadata/_custom_type_script = "uid://orelpqn6cckw"
+
+[sub_resource type="Resource" id="Resource_lgo0g"]
+script = ExtResource("30_v0lh2")
+quest_id = "Misha2"
+quest_name = "Collect mircrophone"
+state = "not_started"
+objective = SubResource("Resource_ol6ib")
+reward = ExtResource("17_tmwmb")
+metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
+
+[sub_resource type="Resource" id="Resource_t4yja"]
+script = ExtResource("18_65w77")
+dialogue = {}
+metadata/_custom_type_script = "uid://gonl60qxgtig"
+
+[sub_resource type="Resource" id="Resource_8j7hk"]
+script = ExtResource("31_tmwmb")
+id = "Mellow0"
+description = "get poppies"
+target_id = "Poppies"
+target_type = "collect"
+target_dialogue = ""
+required_quantity = 3
+collected_quantity = 0
+is_completed = false
+next_dialogue = "Mellow2.0"
+metadata/_custom_type_script = "uid://orelpqn6cckw"
+
+[sub_resource type="Resource" id="Resource_urxvd"]
+script = ExtResource("30_v0lh2")
+quest_id = "Mellow0"
+quest_name = "get poppies"
+state = "not_started"
+objective = SubResource("Resource_8j7hk")
+reward = ExtResource("33_v0lh2")
+metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
+
+[sub_resource type="Resource" id="Resource_stsei"]
+script = ExtResource("18_65w77")
+dialogue = {}
+metadata/_custom_type_script = "uid://gonl60qxgtig"
+
+[sub_resource type="Resource" id="Resource_v4tdy"]
+script = ExtResource("18_65w77")
+dialogue = {}
+metadata/_custom_type_script = "uid://gonl60qxgtig"
+
+[sub_resource type="Resource" id="Resource_ch8bp"]
+script = ExtResource("31_tmwmb")
+id = "Mango0"
+description = "talk to mellow"
+target_id = "Mellow"
+target_type = "talk_to"
+target_dialogue = "Mellow"
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+next_dialogue = "Mango2.0"
+metadata/_custom_type_script = "uid://orelpqn6cckw"
+
+[sub_resource type="Resource" id="Resource_npree"]
+script = ExtResource("30_v0lh2")
+quest_id = "Mango0"
+quest_name = "talk to mellow"
+state = "not_started"
+objective = SubResource("Resource_ch8bp")
+reward = ExtResource("70_ykduy")
+metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
+
+[sub_resource type="Resource" id="Resource_5r6wc"]
+script = ExtResource("31_tmwmb")
+id = "Mango1"
+description = "get payment"
+target_id = "Coins"
+target_type = "collect"
+target_dialogue = ""
+required_quantity = 1500
+collected_quantity = 0
+is_completed = false
+next_dialogue = "Mango3.0"
+metadata/_custom_type_script = "uid://orelpqn6cckw"
+
+[sub_resource type="Resource" id="Resource_cxmmu"]
+script = ExtResource("30_v0lh2")
+quest_id = "Mango1"
+quest_name = "get payment"
+state = "not_started"
+objective = SubResource("Resource_5r6wc")
+reward = ExtResource("17_tmwmb")
+metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
+
+[sub_resource type="Resource" id="Resource_3ime7"]
+script = ExtResource("18_65w77")
+dialogue = {}
+metadata/_custom_type_script = "uid://gonl60qxgtig"
+
+[sub_resource type="Resource" id="Resource_abq44"]
+script = ExtResource("31_tmwmb")
+id = "Marigold0"
+description = "Play with Nutmeg"
+target_id = "Nutmeg"
+target_type = "play"
+target_dialogue = "Nutmeg"
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+next_dialogue = "Marigold2.0"
+metadata/_custom_type_script = "uid://orelpqn6cckw"
+
+[sub_resource type="Resource" id="Resource_cncxv"]
+script = ExtResource("30_v0lh2")
+quest_id = "Marigold0"
+quest_name = "Play with Nutmeg"
+state = "not_started"
+objective = SubResource("Resource_abq44")
+reward = ExtResource("17_tmwmb")
+metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
+
+[sub_resource type="Resource" id="Resource_w4vym"]
+script = ExtResource("18_65w77")
+dialogue = {}
+metadata/_custom_type_script = "uid://gonl60qxgtig"
+
+[sub_resource type="Resource" id="Resource_m0wh4"]
+script = ExtResource("31_tmwmb")
+id = "Cinnamon0"
+description = "Play with Nutmeg"
+target_id = ""
+target_type = "play"
+target_dialogue = ""
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+next_dialogue = "Cinnamon2.0"
+metadata/_custom_type_script = "uid://orelpqn6cckw"
+
+[sub_resource type="Resource" id="Resource_nb1gb"]
+script = ExtResource("30_v0lh2")
+quest_id = "Cinnamon0"
+quest_name = "Play with Nutmeg"
+state = "not_started"
+objective = SubResource("Resource_m0wh4")
+metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
+
+[sub_resource type="Resource" id="Resource_mu7i0"]
+script = ExtResource("18_65w77")
+dialogue = {}
+metadata/_custom_type_script = "uid://gonl60qxgtig"
+
+[sub_resource type="Resource" id="Resource_csoom"]
+script = ExtResource("31_tmwmb")
+id = "Brute0"
+description = "get snack"
+target_id = "Snack"
+target_type = "collect"
+target_dialogue = ""
+required_quantity = 5
+collected_quantity = 0
+is_completed = false
+next_dialogue = "Brute2.0"
+metadata/_custom_type_script = "uid://orelpqn6cckw"
+
+[sub_resource type="Resource" id="Resource_3guj1"]
+script = ExtResource("30_v0lh2")
+quest_id = "Brute0"
+quest_name = "Get snacks"
+state = "not_started"
+objective = SubResource("Resource_csoom")
+metadata/_custom_type_script = "uid://cu2lpn3ktywa3"
+
 [node name="root_node" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_vhsfa")
 
 [node name="sandcat" parent="." instance=ExtResource("1_ynfbw")]
+process_mode = 1
 z_index = 10
-position = Vector2(262, -744)
+position = Vector2(4752, 3090)
+scale = Vector2(0.9, 0.9)
 
 [node name="Camera2D" type="Camera2D" parent="sandcat"]
+z_index = 50
+z_as_relative = false
 position = Vector2(-1, -68)
 scale = Vector2(0.6, 0.6)
 offset = Vector2(0, -200)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.65, 0.65)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
@@ -76,90 +567,1055 @@ drag_top_margin = 0.1
 drag_right_margin = 0.1
 drag_bottom_margin = 0.0
 
-[node name="environment" type="Node2D" parent="."]
-script = ExtResource("3_gwtxu")
+[node name="Menu" parent="." instance=ExtResource("12_65w77")]
+metadata/_edit_use_anchors_ = true
 
-[node name="cave_background" type="Polygon2D" parent="environment"]
+[node name="Island" type="Sprite2D" parent="."]
+process_mode = 1
+position = Vector2(5787, 6035)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("10_yd5j6")
+script = ExtResource("10_184fy")
+
+[node name="CollisionShapes" type="StaticBody2D" parent="Island"]
+position = Vector2(-0.0429688, 138.928)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Island/CollisionShapes"]
+position = Vector2(0.042899, 15.3576)
+polygon = PackedVector2Array(-89.2908, -2581.67, -643.291, -2504.33, -869.291, -2319.67, -1055.29, -1569.67, -1345.96, -1204.33, -1447.29, -674.333, -1603.29, -551.667, -1616.62, -468.333, -1455.96, -291.667, -1403.96, -294.333, -983.291, -563.667, -991.958, -651, -1338.62, -681, -1353.96, -956.333, -1315.29, -1149.67, -1190.62, -1363, -1146.62, -1363, -1119.29, -1411.67, -990.624, -1419, -970.624, -1377, -933.291, -1435.67, -509.291, -1469, 237.376, -1439, 272.042, -1414.33, 313.376, -1274.33, 360.709, -1375.67, 456.709, -1407, 499.376, -1379, 539.376, -1435.67, 798.709, -1460.33, 868.709, -1219.67, 912.042, -879, 950.709, -855, 1040.71, -1304.33, 1053.38, -1454.33, 1102.04, -1479, 1070.71, -1551.67, 412.042, -1521.67, 47.9028, -1528.93, -283.526, -1523.93, -453.526, -1514.64, -907.097, -1536.07, -963.291, -1597.67, -971.958, -1729.67, -839.291, -2269, -639.958, -2457.67, -532.624, -2435, -432.624, -2259, -387.958, -2097, -355.291, -2336.33, -320.624, -2407.67, -251.958, -2413.67, -225.291, -2355, -206.624, -2442.33, -95.9575, -2531, 62.7092, -2521, 142.709, -2409, 157.376, -2320.33, 232.709, -2054.33, 246.042, -1781, 267.376, -1735, 271.376, -1606.33, 296.042, -1782.33, 293.376, -2311.67, 323.376, -2363.67, 367.376, -2316.33, 404.709, -2370.33, 436.042, -2369, 524.709, -2226.33, 600.042, -2169.67, 677.376, -2052.33, 766.042, -2026.33, 852.042, -1966.33, 938.042, -1973, 1032.71, -1949, 1221.38, -1926.33, 1339.38, -1780.33, 1398.04, -1689, 1402.04, -1614.33, 1356.71, -1573, 1369.38, -1461, 1410.71, -1439.67, 1446.71, -1325, 1465.38, -1389.67, 1504.04, -1398.33, 1545.38, -1378.33, 1586.71, -1307.67, 1610.04, -1363.67, 1652.04, -1363.67, 1875.38, -1151.67, 1920.04, -1141.67, 1988.71, -1038.33, 2087.38, -695, 1343.38, -689, 855.376, -670.333, 134.042, -663, 20.0425, -675.667, -338.624, -653, -727.958, -675.667, -729.958, -537, -481.291, -523, -203.958, -547.667, 206.709, -527, 756.709, -535.667, 982.042, -558.333, 1330.04, -555.667, 1804.71, -559.667, 2092.71, -559.667, 2210.71, -295, 2365.38, -297, 2845.04, -333.214, 3413.38, -341.667, 3520.71, -437.667, 3492.04, -489, 2184.04, -659, 2096.71, -977, 1964.04, -1149.67, 1517.38, -1614.33, 1306.04, -1976.33, 703.376, -2125, 401.376, -2506.33)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Island/CollisionShapes"]
+position = Vector2(1.47426, -160.359)
+polygon = PackedVector2Array(179.283, 262.143, -288.624, 274.333, -459.291, 292.333, -742.624, 267.667, -1337.29, 257, -1383.96, 249, -1495.29, 249, -1664.62, 256.333, -2065.29, 280.333, -2045.96, 315, -1897.96, 359, -1896.62, 407, -3043.29, 405, -3175.96, 39, -3443.29, -151, -3739.96, -159.667, -3936.62, 60.3335, -4017.29, 373.667, -3975.29, 785.667, -4035.96, 994.333, -4071.96, 1456.33, -4184.62, 1604.33, -4339.29, 1640.33, -4294.62, 1791.67, -3869.96, 1834.33, -3625.29, 1845.67, -3223.29, 1801.67, -3079.29, 1647.67, -3132.62, 1630.33, -3504.29, 1627.86, -3507.86, 1421.43, -3522.15, 1347.86, -3544.29, 1325, -3555.72, 1276.43, -3605, 1053.57, -3627.86, 1200.71, -3630.72, 1475.71, -3645, 1460.71, -3654.47, 1627.34, -3946.62, 1625.67, -3975.96, 1529, -3961.29, 974.333, -3900.62, 797, -3907.29, 389.667, -3849.96, 222.333, -3657.96, 169.667, -3267.29, 267, -3099.29, 784.333, -3009.29, 927, -2971.29, 1047, -2958.62, 1214.33, -2913.96, 1038.33, -2871.29, 995.667, -2807.29, 1001, -2725.29, 1104.33, -2705.96, 1194.33, -2597.29, 1325.67, -2559.96, 1489.67, -2575.96, 1631, -2627.96, 1631.67, -2629.96, 1680.33, 59.376, 1680.33, 57.376, 1723.67, 147.376, 1671.67, 224.042, 1680.33, 226.426, 1523.57, 164.709, 1565.67, -325.291, 1575, -1055.96, 1580.33, -1527.96, 1578.33, -1615, 1597.14, -1945.29, 1613, -2108.62, 1583.67, -2123.29, 1350.33, -2083.29, 1299.67, -2029.29, 1017.67, -1797.96, 615.667, -1739.96, 609.667, -1715.96, 646.333, -1675.96, 569.667, -1635.96, 553.667, -1553.96, 575, -1541.29, 731.667, -1533.96, 1039.67, -1506.62, 793.667, -1495.96, 657, -1493.96, 562.333, -1446.62, 465.667, -855.958, 440.333, -825.291, 509.667, -788.624, 469.667, -635.958, 499, -623.291, 535, -601.291, 455, -542.624, 438.333, 105.376, 457, 147.376, 586.333, 180.709, 473, 207.857, 466.429, 206.426, 1215, 84.2832, 1237.86, 84.2832, 1284.29, 243.569, 1283.57, 242.143, 1210.71, 243.269, 452.774, 244.283, 425, 242.854, 295)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Island/CollisionShapes"]
+position = Vector2(-15.6715, -426.785)
+polygon = PackedVector2Array(-3987.14, 2544.29, -3969.96, 2628.33, -3976.62, 2748.33, 4494.04, 2745, 4526.71, 2621.67, 4581.38, 2564.33, 4143.57, 2546.43, 3476.04, 2574.33, 2604.29, 2565, 1833.57, 2564.29, 1178.57, 2559.29, 710, 2540, 200.714, 2549.29, -189.286, 2558.57, -790, 2554.29, -1779.29, 2578.57, -2467.86, 2567.86, -2609.29, 2547.86, -3217.29, 2574.33, -3779.29, 2568.57)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Island/CollisionShapes"]
+position = Vector2(-2.81145, -161.071)
+polygon = PackedVector2Array(532.14, 1522.86, 540.042, 1719.67, 608.042, 1673.67, 690.042, 1675.67, 690.042, 1697.67, 3494.04, 1708.33, 3492.04, 1750.33, 3514.71, 1728.33, 3707.38, 1728.33, 3732.04, 1737.67, 4006.71, 1716.33, 4078.04, 1727.67, 4182.04, 1826.33, 4158.04, 1953, 4474.04, 1953, 4656.71, 1668.33, 4733.38, 1625.67, 4295.38, 1617, 3861.38, 1629.67, 3849.38, 1580.33, 3878.04, 1388.33, 3902.04, 1116.33, 3943.38, 1122.33, 4188.71, 1081.67, 4208.04, 972.333, 4185.38, 951, 4105.38, 960.333, 4079.38, 905, 4018.04, 855.667, 3960.04, 717, 3938.04, 566.333, 3794.04, 275, 3700.04, 243.667, 3513.38, 221, 3275.38, 226.333, 3057.38, 241, 2804.04, 245, 2690.04, 259, 2575.38, 257, 2471.38, 220.333, 2244.04, 234.333, 1970.71, 235, 1771.38, 230.333, 1325.38, 243, 867.376, 265, 502.854, 262.857, 471.426, 293.572, 468.569, 420, 476.429, 446.429, 491.429, 445, 502.143, 1216.43, 500.711, 1287.14, 647.14, 1305, 649.283, 1252.14, 537.857, 1219.29, 525.714, 448.572, 868.042, 425.667, 918.709, 457.667, 934.283, 652.857, 956.042, 568.333, 988.042, 592.333, 1005.38, 474.333, 1128.71, 403, 1294.71, 427.667, 1342.04, 493, 1364.04, 429.667, 1411.38, 439, 1494.04, 470.333, 1592.71, 405.667, 1890.71, 390.333, 2288.71, 399.667, 2442.04, 382.333, 3146.71, 400.333, 3638.04, 379.667, 3704.04, 411.667, 3751.38, 553.667, 3820.04, 761, 3771.38, 954.333, 3726.71, 1013, 3696.04, 1232.33, 3600.71, 1584.33, 3388.04, 1569, 3200.71, 1585, 2836.71, 1569, 2698.04, 1582.33, 2288.71, 1575, 2088.04, 1560.33, 1799.38, 1565, 1406.71, 1561.67, 1040.71, 1575, 848.042, 1581, 586.709, 1565)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Island/CollisionShapes"]
+position = Vector2(-4088.53, 2254.64)
+scale = Vector2(0.666667, 0.666667)
+shape = SubResource("WorldBoundaryShape2D_brfk8")
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Island/CollisionShapes"]
+polygon = PackedVector2Array(-3492.81, 282.5, -3644.24, 282.5, -3627.1, 346.786, -3594.96, 537.5, -3577.81, 545.357, -3559.24, 1052.5, -3525.67, 811.071, -3518.53, 502.5, -3514.24, 374.643, -3504.24, 338.214, -3498.53, 303.214)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Island/CollisionShapes"]
+polygon = PackedVector2Array(-482.814, 859.643, -639.957, 860.357, -615.671, 919.643, -590.671, 1053.93, -575.671, 989.643, -553.528, 1047.5, -541.385, 1182.5, -532.1, 1369.64, -511.385, 1195.36, -520.671, 1071.07, -505.671, 934.643)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Island/CollisionShapes"]
+polygon = PackedVector2Array(-346.386, 852.5, -323.529, 906.786, -312.1, 1029.64, -309.243, 1190.36, -291.386, 1128.21, -278.529, 1257.5, -272.1, 1346.79, -251.386, 1162.5, -246.386, 1030.36, -230.672, 966.072, -212.814, 991.786, -209.243, 955.357, -213.529, 925.357, -187.1, 855.357)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Island/CollisionShapes"]
+polygon = PackedVector2Array(499.329, -1109.64, 505.757, -1042.5, 538.615, -976.786, 549.329, -1011.07, 570.043, -878.929, 585.757, -721.072, 625.757, -971.072, 647.9, -1016.79, 658.615, -1106.07)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Island/CollisionShapes"]
+polygon = PackedVector2Array(2115.04, 549.643, 2130.76, 726.071, 2137.19, 924.643, 2165.76, 874.643, 2188.61, 893.928, 2204.33, 948.928, 2214.33, 858.214, 2202.9, 806.071, 2217.9, 617.5, 2229.33, 615.357, 2237.19, 638.928, 2263.61, 546.071)
+
+[node name="IslandOverlays" type="Sprite2D" parent="Island"]
+z_index = 11
+position = Vector2(3.57136, 2.1425)
+texture = ExtResource("11_yd5j6")
+script = ExtResource("12_yd5j6")
+
+[node name="sea" type="Polygon2D" parent="Island"]
+z_index = 11
+position = Vector2(64842.9, 423.571)
+scale = Vector2(2.65887, 0.747417)
+color = Color(0.298039, 0.462745, 0.52549, 1)
+polygon = PackedVector2Array(-30386.4, 2560.25, -25888.5, 2563.11, -25886.4, 2736.09, -25887.2, 2905.24, -22699.8, 2907.15, -22698.4, 2696.91, -22691.7, 2563.47, -19357.3, 2564.86, -19365.2, 3407.77, -30415.2, 3397.25)
+
+[node name="sky" type="Polygon2D" parent="Island"]
+z_index = -3
+position = Vector2(12295.8, 278.571)
+scale = Vector2(1, 0.864533)
+color = Color(0.533333, 0.635294, 0.709804, 1)
+polygon = PackedVector2Array(-7829.29, 2581.91, -8160.71, 2546.38, -8052.14, 1604.5, -8560, 1558.23, -8410, 477.549, -8590.71, -0.82666, -9907.14, -33.0488, -10127.1, -844.387, -10230, -1286.41, -10367.1, -1485.53, -10835.7, -2022.56, -11039.3, -2420.8, -11577.9, -2560.43, -11729.3, -2726.49, -11887.1, -3014.01, -12352.9, -3145.38, -12960.7, -3046.24, -13153.6, -2836.38, -13320.7, -1968.86, -13635, -1544.19, -13711.4, -921.225, -13763.6, 9.08789, -15445, 33.0479, -15675, -420.542, -16165, -345.356, -16276.4, 103.276, -16236.4, 596.523, -16305.7, 910.483, -16340.7, 1573.93, -15532.9, 1635.9, -15506.4, 2573.64, -28152.9, 2420.8, -28238.7, -4121.13, 1072.77, -4252.5, 1055.63, 2607.52)
+
+[node name="environment" type="Node2D" parent="Island"]
+position = Vector2(-0.0429688, 138.928)
+script = ExtResource("13_urxvd")
+
+[node name="Parallax2D" type="Parallax2D" parent="Island/environment"]
+scale = Vector2(0.714286, 0.714286)
+scroll_scale = Vector2(0.95, 1)
+scroll_offset = Vector2(-300, 0)
+
+[node name="cave_background" type="Polygon2D" parent="Island/environment/Parallax2D"]
 z_index = -10
 texture_repeat = 2
-material = SubResource("ShaderMaterial_l3gbx")
-position = Vector2(18, -98)
-scale = Vector2(1, 0.864533)
-texture = ExtResource("3_ldoum")
-polygon = PackedVector2Array(551, -1257, 39, -1124, -355, -476, -555, 49, -561, 686, -490, 1016, 3560, 1024, 3411, -649, 2979, -781.599, 2631, -872.978, 1953, -881, 1390, -815, 1042, -740, 827, -1080)
-uv = PackedVector2Array(551, -1257, 39, -1124, -459, -602, -555, 49, -561, 686, -490, 1016, 3560, 1024, 3411, -649, 3038, -1014, 2608, -1105, 1953, -881, 1398, -715, 1042, -740, 827, -1080)
+material = SubResource("ShaderMaterial_wrl4d")
+position = Vector2(5257.06, 6442.08)
+scale = Vector2(1.96, 1.60308)
+texture = ExtResource("14_ol6ib")
+polygon = PackedVector2Array(675.001, -6671.27, -5997.96, -6666.5, -5952.04, -959.768, 756.634, -1130.42)
+script = ExtResource("15_lgo0g")
 
-[node name="cave1" parent="environment" instance=ExtResource("4_jfjke")]
-position = Vector2(954, -284)
+[node name="Backgrounds1_5" type="Sprite2D" parent="Island/environment/Parallax2D"]
+z_index = -2
+position = Vector2(1278.06, -321.5)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("27_ol6ib")
 
-[node name="all_platforms" type="Node2D" parent="environment"]
-position = Vector2(2214, -331)
+[node name="Backgrounds2_5" type="Sprite2D" parent="Island/environment/Parallax2D"]
+z_index = -2
+position = Vector2(-245.939, 2573.5)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("28_lgo0g")
 
-[node name="floor3" parent="environment/all_platforms" instance=ExtResource("4_7b5fe")]
-position = Vector2(-403, 159)
+[node name="Parallax2D2" type="Parallax2D" parent="Island/environment"]
+scale = Vector2(0.510205, 0.510205)
 
-[node name="platform5" parent="environment/all_platforms" instance=ExtResource("5_jfjke")]
+[node name="LataPile" type="Sprite2D" parent="Island/environment/Parallax2D2"]
+position = Vector2(-2291.71, 3976.7)
+scale = Vector2(0.270361, 0.270361)
+texture = ExtResource("15_yd5j6")
+script = ExtResource("19_lgo0g")
 
-[node name="platform4" parent="environment/all_platforms" instance=ExtResource("5_jfjke")]
-position = Vector2(-1453, 115)
+[node name="LataPile2" type="Sprite2D" parent="Island/environment/Parallax2D2"]
+position = Vector2(-649.515, 3304.7)
+scale = Vector2(0.221484, 0.221484)
+texture = ExtResource("15_yd5j6")
+script = ExtResource("19_lgo0g")
 
-[node name="floor2" parent="environment/all_platforms" instance=ExtResource("4_7b5fe")]
-position = Vector2(-1919, 626)
+[node name="Backgrounds2" type="Sprite2D" parent="Island/environment/Parallax2D2"]
+z_index = -2
+position = Vector2(-453.515, 3500.7)
+scale = Vector2(1.96, 1.96)
+texture = ExtResource("28_yd5j6")
 
-[node name="platform3" parent="environment/all_platforms" instance=ExtResource("5_jfjke")]
-position = Vector2(-845, 267)
+[node name="StaticBody2D" type="StaticBody2D" parent="Island/environment/Parallax2D2/Backgrounds2"]
+position = Vector2(-72.8999, -1948.93)
+scale = Vector2(0.714286, 0.714286)
 
-[node name="platform2" parent="environment/all_platforms" instance=ExtResource("5_jfjke")]
-position = Vector2(-1379, 427)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Island/environment/Parallax2D2/Backgrounds2/StaticBody2D"]
+polygon = PackedVector2Array(-3505.94, 2985.5, -3506.94, 3015.5, -3196.94, 3017.5, -3192.94, 2895.5, -2930.94, 2899.5, -2930.94, 2850.5, -2584.94, 2852.5, -2583.94, 2825.5, -2945.94, 2822.5, -2948.94, 2866.5, -3222.94, 2864.5, -3225.94, 2979.5)
+one_way_collision = true
 
-[node name="platform" parent="environment/all_platforms" instance=ExtResource("5_jfjke")]
-position = Vector2(-2379, 375)
+[node name="StaticBody2D2" type="StaticBody2D" parent="Island/environment/Parallax2D2/Backgrounds2"]
+position = Vector2(-124.971, -3341.02)
+scale = Vector2(0.510205, 0.510205)
 
-[node name="floor" parent="environment/all_platforms" instance=ExtResource("4_7b5fe")]
-position = Vector2(-1920, -266)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Island/environment/Parallax2D2/Backgrounds2/StaticBody2D2"]
+position = Vector2(-5.65673, 349.201)
+polygon = PackedVector2Array(-309.457, 6164.8, -309.457, 6233.4, 730.742, 6225, 729.342, 6150.8)
+one_way_collision = true
 
-[node name="floor4" parent="environment/all_platforms" instance=ExtResource("4_7b5fe")]
-position = Vector2(1241, 618)
+[node name="Backgrounds1" type="Sprite2D" parent="Island/environment/Parallax2D2"]
+z_index = -2
+position = Vector2(1755.68, -507.499)
+scale = Vector2(1.96, 1.96)
+texture = ExtResource("27_184fy")
 
-[node name="breaking_platform" parent="environment" instance=ExtResource("12_b33qr")]
-position = Vector2(3094, 171)
+[node name="StaticBody2D2" type="StaticBody2D" parent="Island/environment/Parallax2D2/Backgrounds1"]
+position = Vector2(-124.971, -3341.02)
+scale = Vector2(0.510205, 0.510205)
 
-[node name="sky" type="Polygon2D" parent="environment"]
-z_index = -15
-position = Vector2(63, 2)
-color = Color(0.505882, 0.572549, 0.623529, 1)
-polygon = PackedVector2Array(-1285, -1692, 3889, -1692, 3918, 1182, -1481, 1210)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Island/environment/Parallax2D2/Backgrounds1/StaticBody2D2"]
+polygon = PackedVector2Array(-2016.06, 6915.2, -2735.66, 6915.2, -2735.66, 7072, -3059.06, 7074.8, -3059.06, 7115.4, -2709.06, 7109.8, -2709.06, 6948.8, -2016.06, 6946)
+one_way_collision = true
 
-[node name="waterfall" parent="environment" instance=ExtResource("11_t75in")]
-position = Vector2(2689, -622)
+[node name="all_platforms" type="Node2D" parent="Island/environment"]
+position = Vector2(546.76, -2103.79)
+scale = Vector2(0.428571, 0.571428)
 
-[node name="brekable_wall" parent="environment" instance=ExtResource("11_i6oe7")]
-position = Vector2(3809, 361)
+[node name="Floor2" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-1590.67, -186.5)
+scale = Vector2(1, 1)
 
-[node name="Menu" parent="." instance=ExtResource("12_65w77")]
+[node name="Floor3" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-3135.67, 786)
+scale = Vector2(1, 1)
 
-[node name="crows" type="Node" parent="."]
+[node name="Platform4" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-1110.67, -406.5)
+scale = Vector2(1, 1)
 
-[node name="static_crow" parent="crows" instance=ExtResource("14_e6b1x")]
-position = Vector2(-125, -127)
+[node name="Platform5" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-970.666, 576)
+scale = Vector2(1, 1)
 
-[node name="moving_crow" parent="." instance=ExtResource("15_vpben")]
-position = Vector2(1892, -514)
+[node name="Floor4" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-110.666, 764.75)
+scale = Vector2(1, 1)
 
-[node name="NPC" parent="." instance=ExtResource("16_wwi2v")]
-position = Vector2(4730, 387)
-npc_animation = ExtResource("17_ap4d7")
-dialogue_resource = SubResource("Resource_motqh")
-dialogue_colour = Color(0.33, 0.2145, 0.0528, 1)
-dialogue_text_colour = Color(0.63, 0.347025, 0.1449, 1)
-quests = Array[ExtResource("19_motqh")]([SubResource("Resource_plwfq")])
+[node name="Platform6" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(537.667, 549.75)
+scale = Vector2(1, 1)
 
-[node name="NPC2" parent="." instance=ExtResource("16_wwi2v")]
-position = Vector2(3901, 389)
-npc_name = "Marigold"
-npc_animation = ExtResource("18_motqh")
-area_offset = 350
+[node name="Platform7" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-164, 366)
+scale = Vector2(1, 1)
+
+[node name="Floor5" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-162.333, 56)
+scale = Vector2(1, 1)
+
+[node name="Platform2" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-2672.33, 607.25)
+scale = Vector2(1, 1)
+
+[node name="Platform" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-2214, 331)
+scale = Vector2(1, 1)
+
+[node name="Floor" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-2989, -85.2504)
+scale = Vector2(2.1, 1.4)
+
+[node name="Platform3" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-1592.33, 137.25)
+scale = Vector2(1, 1)
+
+[node name="breaking_platform" parent="Island/environment/all_platforms" instance=ExtResource("12_b33qr")]
+position = Vector2(1601, 2196)
+scale = Vector2(1, 1)
+
+[node name="breaking_platform2" parent="Island/environment/all_platforms" instance=ExtResource("12_b33qr")]
+position = Vector2(2754.33, 2042.25)
+scale = Vector2(1, 1)
+
+[node name="Floor6" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(2757.67, 1724.75)
+scale = Vector2(1, 1)
+
+[node name="Floor7" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(3202.67, 2216)
+scale = Vector2(1, 1)
+
+[node name="brekable_wall" parent="Island/environment/all_platforms" instance=ExtResource("11_i6oe7")]
+position = Vector2(919.334, 2394.75)
+scale = Vector2(1.33333, 0.75)
+
+[node name="brekable_wall2" parent="Island/environment/all_platforms" instance=ExtResource("11_i6oe7")]
+position = Vector2(-327.333, 2319.75)
+scale = Vector2(1.66667, 1.25)
+
+[node name="Floor8" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(537.667, 2224.75)
+scale = Vector2(1, 1)
+
+[node name="Floor9" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(542.667, 1933.5)
+scale = Vector2(1, 1)
+
+[node name="Platform8" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-4247.34, 2256.01)
+scale = Vector2(1, 1)
+
+[node name="Platform9" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-4259.01, 1939.76)
+scale = Vector2(1, 1)
+
+[node name="breaking_platform3" parent="Island/environment/all_platforms" instance=ExtResource("12_b33qr")]
+position = Vector2(-3289.01, 2606.01)
+scale = Vector2(1.5, 1)
+
+[node name="Platform10" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(77.6611, 1733.51)
+scale = Vector2(1, 1)
+
+[node name="Platform11" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-2645.68, 1588.51)
+scale = Vector2(1, 1)
+
+[node name="Platform12" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-1302.34, 1587.26)
+scale = Vector2(1, 1)
+
+[node name="Platform13" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-1632.34, 1909.76)
+scale = Vector2(1, 1)
+
+[node name="Floor10" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-1062.34, 2237.26)
+scale = Vector2(1, 1)
+
+[node name="Floor11" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+z_index = -1
+position = Vector2(-402.34, 3908.51)
+scale = Vector2(1.5, 1)
+
+[node name="Floor12" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-310.673, 4214.76)
+scale = Vector2(1, 1)
+
+[node name="Floor13" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-307.34, 4519.76)
+scale = Vector2(1, 1)
+
+[node name="Floor14" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-307.34, 4829.76)
+scale = Vector2(1, 1)
+
+[node name="Floor15" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-310.673, 5128.51)
+scale = Vector2(1, 1)
+
+[node name="Floor16" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-304.007, 5433.51)
+scale = Vector2(1, 1)
+
+[node name="Floor17" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-299.007, 5753.51)
+scale = Vector2(1, 1)
+
+[node name="Floor18" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-387.34, 6074.76)
+scale = Vector2(1.8, 1)
+
+[node name="Floor19" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-289.007, 6371.01)
+scale = Vector2(1, 1)
+
+[node name="Floor20" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-292.34, 6669.76)
+scale = Vector2(1, 1)
+
+[node name="Floor21" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-285.673, 6974.76)
+scale = Vector2(1, 1)
+
+[node name="Floor22" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-289.006, 7204.77)
+scale = Vector2(1, 1)
+
+[node name="Platform14" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-8187.35, 6677.26)
+scale = Vector2(1, 1)
+
+[node name="Floor27" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-8184.01, 6398.51)
+scale = Vector2(1, 1)
+
+[node name="Floor28" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-8502.35, 5951.01)
+scale = Vector2(1, 1)
+
+[node name="Platform15" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-8955.68, 5682.26)
+scale = Vector2(1, 1)
+
+[node name="Platform16" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-8504.01, 5401.01)
+scale = Vector2(1, 1)
+
+[node name="Platform17" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-9217.35, 5226.01)
+scale = Vector2(1, 1)
+
+[node name="Platform18" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-8542.35, 4989.76)
+scale = Vector2(1, 1)
+
+[node name="Platform19" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-9237.35, 4791.01)
+scale = Vector2(1, 1)
+
+[node name="Platform20" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-8579.01, 4559.76)
+scale = Vector2(1, 1)
+
+[node name="Platform21" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-9227.35, 4326.01)
+scale = Vector2(1, 1)
+
+[node name="Floor29" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-9597.35, 4154.76)
+scale = Vector2(1, 1.3)
+
+[node name="Floor30" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-10215.7, 4301.01)
+scale = Vector2(1, 1)
+
+[node name="Floor31" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-9842.35, 4609.76)
+scale = Vector2(1, 1)
+
+[node name="Floor32" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-10185.7, 4912.26)
+scale = Vector2(1, 1)
+
+[node name="Floor33" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-9834.02, 5217.26)
+scale = Vector2(1, 1)
+
+[node name="Floor34" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-10267.3, 5536.01)
+scale = Vector2(1, 1)
+
+[node name="Floor35" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-9807.35, 5837.26)
+scale = Vector2(1, 1)
+
+[node name="Floor36" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-10289, 6021.01)
+scale = Vector2(1, 1)
+
+[node name="Platform22" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-2957.34, 5168.51)
+scale = Vector2(1, 1)
+
+[node name="Platform23" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-1899.01, 5164.76)
+scale = Vector2(1, 1)
+
+[node name="Platform24" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-1299.01, 4871.01)
+scale = Vector2(1, 1)
+
+[node name="Floor37" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-914.007, 5282.26)
+scale = Vector2(1, 1)
+
+[node name="Floor38" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-1785.67, 5851.01)
+scale = Vector2(1, 1)
+
+[node name="Floor39" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-7639.01, 6811.01)
+scale = Vector2(1, 1)
+
+[node name="Floor40" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-2579.01, 5173.51)
+scale = Vector2(1, 1)
+
+[node name="breaking_platform4" parent="Island/environment/all_platforms" instance=ExtResource("12_b33qr")]
+position = Vector2(-3989.01, 5221.01)
+scale = Vector2(1, 1)
+
+[node name="Floor41" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-4484.01, 4916.01)
+scale = Vector2(1, 1)
+
+[node name="Floor42" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-4484.01, 4648.51)
+scale = Vector2(1, 1)
+
+[node name="brekable_wall3" parent="Island/environment/all_platforms" instance=ExtResource("11_i6oe7")]
+position = Vector2(-4850.68, 5823.51)
+scale = Vector2(2, 2.125)
+
+[node name="Floor43" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(-6054.01, 5881.01)
+scale = Vector2(1, 1)
+
+[node name="breaking_platform5" parent="Island/environment/all_platforms" instance=ExtResource("12_b33qr")]
+position = Vector2(-5375.68, 5677.26)
+scale = Vector2(1, 1)
+
+[node name="Platform25" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(-5947.35, 5404.76)
+scale = Vector2(1, 1)
+
+[node name="breaking_platform6" parent="Island/environment/all_platforms" instance=ExtResource("12_b33qr")]
+position = Vector2(-5382.34, 5194.76)
+scale = Vector2(1, 1)
+
+[node name="Floor44" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(1311, 5873.51)
+scale = Vector2(1, 1)
+
+[node name="Platform26" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(905.995, 5648.51)
+scale = Vector2(1, 1)
+
+[node name="Platform27" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(1331, 5361.01)
+scale = Vector2(1, 1)
+
+[node name="breaking_platform7" parent="Island/environment/all_platforms" instance=ExtResource("12_b33qr")]
+position = Vector2(1999.33, 5232.26)
+scale = Vector2(1, 1)
+
+[node name="breaking_platform8" parent="Island/environment/all_platforms" instance=ExtResource("12_b33qr")]
+position = Vector2(1326, 5013.51)
+scale = Vector2(1, 1)
+
+[node name="Floor45" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(319.327, 4969.76)
+scale = Vector2(1, 1)
+
+[node name="Floor46" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(302.661, 4658.51)
+scale = Vector2(1, 1)
+
+[node name="Floor47" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(2669.33, 4618.51)
+scale = Vector2(1, 1)
+
+[node name="Platform28" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(3829.33, 4624.76)
+scale = Vector2(1, 1)
+
+[node name="brekable_wall4" parent="Island/environment/all_platforms" instance=ExtResource("11_i6oe7")]
+position = Vector2(3786, 5843.51)
+scale = Vector2(1.83334, 1.875)
+
+[node name="breaking_platform9" parent="Island/environment/all_platforms" instance=ExtResource("12_b33qr")]
+position = Vector2(4466, 4772.26)
+scale = Vector2(1, 1)
+
+[node name="breaking_platform10" parent="Island/environment/all_platforms" instance=ExtResource("12_b33qr")]
+position = Vector2(5036, 4569.76)
+scale = Vector2(1, 1)
+
+[node name="Platform29" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(5436, 5233.51)
+scale = Vector2(1, 1)
+
+[node name="Floor48" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(6499.33, 5236.01)
+scale = Vector2(1, 1)
+
+[node name="Platform30" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(7029.33, 5507.26)
+scale = Vector2(1, 1)
+
+[node name="Floor49" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(7412.67, 4948.51)
+scale = Vector2(1, 1)
+
+[node name="Platform31" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(7106, 4637.26)
+scale = Vector2(1, 1)
+
+[node name="Floor51" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(5057.67, 4941.01)
+scale = Vector2(1, 1)
+
+[node name="Floor50" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(7109.33, 4316.01)
+scale = Vector2(1, 1)
+
+[node name="Platform32" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(4576, 5768.51)
+scale = Vector2(1, 1)
+
+[node name="Platform33" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(5374.33, 5768.51)
+scale = Vector2(1, 1)
+
+[node name="Floor52" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+z_index = -1
+position = Vector2(-8530.68, 3879.76)
+scale = Vector2(1, 1)
+
+[node name="Floor53" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+z_index = -1
+position = Vector2(-8692.35, 3619.76)
+scale = Vector2(1, 1)
+
+[node name="Floor54" parent="Island/environment/all_platforms" instance=ExtResource("4_7b5fe")]
+position = Vector2(6589.33, 5839.76)
+scale = Vector2(1, 1)
+
+[node name="Platform34" parent="Island/environment/all_platforms" instance=ExtResource("5_jfjke")]
+position = Vector2(6131, 5764.76)
+scale = Vector2(1, 1)
+
+[node name="all_crows" type="Node2D" parent="Island/environment"]
+
+[node name="static_crow" parent="Island/environment/all_crows" instance=ExtResource("14_e6b1x")]
+position = Vector2(-283.526, -1581.08)
+scale = Vector2(0.714286, 0.714286)
+left_timer = 0.1
+
+[node name="Path2D" type="Path2D" parent="Island/environment/all_crows"]
+position = Vector2(-464.954, -2009.64)
+rotation = 2.78826
+scale = Vector2(0.714286, 0.714286)
+curve = SubResource("Curve2D_brfk8")
+
+[node name="moving_crow" parent="Island/environment/all_crows/Path2D" instance=ExtResource("15_vpben")]
+position = Vector2(-7.5551, 56.8811)
+rotation = 0.0
+
+[node name="static_crow2" parent="Island/environment/all_crows" instance=ExtResource("14_e6b1x")]
+position = Vector2(779.332, -1861.79)
+scale = Vector2(0.714286, 0.714286)
+
+[node name="static_crow3" parent="Island/environment/all_crows" instance=ExtResource("14_e6b1x")]
+position = Vector2(405.757, -1066.07)
+scale = Vector2(0.642857, 0.642857)
+
+[node name="static_crow4" parent="Island/environment/all_crows" instance=ExtResource("14_e6b1x")]
+position = Vector2(-545.671, -719.643)
+scale = Vector2(0.642857, 0.642857)
+left_timer = 0.3
+
+[node name="static_crow5" parent="Island/environment/all_crows" instance=ExtResource("14_e6b1x")]
+position = Vector2(-3329.96, 1410.36)
+scale = Vector2(0.642857, 0.642857)
+
+[node name="Path2D2" type="Path2D" parent="Island/environment/all_crows"]
+curve = SubResource("Curve2D_qt2b5")
+
+[node name="PathFollow2D" parent="Island/environment/all_crows/Path2D2" instance=ExtResource("15_vpben")]
+position = Vector2(-3287.08, 198.605)
+rotation = 3.14159
+scale = Vector2(0.714286, 0.714286)
+
+[node name="static_crow6" parent="Island/environment/all_crows" instance=ExtResource("14_e6b1x")]
+position = Vector2(-3658.53, 1166.79)
+scale = Vector2(0.642857, 0.642857)
+left_timer = 0.1
+
+[node name="static_crow8" parent="Island/environment/all_crows" instance=ExtResource("14_e6b1x")]
+position = Vector2(-3931.39, 992.5)
+scale = Vector2(0.642857, 0.642857)
+left_timer = 0.1
+
+[node name="static_crow9" parent="Island/environment/all_crows" instance=ExtResource("14_e6b1x")]
+position = Vector2(-3874.96, 639.643)
+scale = Vector2(0.642857, 0.642857)
+left_timer = 0.1
+
+[node name="Path2D3" type="Path2D" parent="Island/environment/all_crows"]
+position = Vector2(-4133.53, -4449.64)
+scale = Vector2(0.714286, 0.714286)
+curve = SubResource("Curve2D_wrl4d")
+
+[node name="PathFollow2D" parent="Island/environment/all_crows/Path2D3" instance=ExtResource("15_vpben")]
+position = Vector2(5883.2, 6941)
+rotation = 3.12763
+
+[node name="static_crow11" parent="Island/environment/all_crows" instance=ExtResource("14_e6b1x")]
+position = Vector2(-3870.67, 285.357)
+scale = Vector2(0.642857, 0.642857)
+left_timer = 0.1
+
+[node name="Path2D4" type="Path2D" parent="Island/environment/all_crows"]
+position = Vector2(-4133.53, -4449.64)
+scale = Vector2(0.714286, 0.714286)
+curve = SubResource("Curve2D_slt5f")
+
+[node name="PathFollow2D" parent="Island/environment/all_crows/Path2D4" instance=ExtResource("15_vpben")]
+position = Vector2(8634.73, 7300.14)
+rotation = 2.51851
+
+[node name="static_crow12" parent="Island/environment/all_crows" instance=ExtResource("14_e6b1x")]
+position = Vector2(3332.19, 823.929)
+scale = Vector2(0.642857, 0.642857)
+
+[node name="Path2D5" type="Path2D" parent="Island/environment/all_crows"]
+position = Vector2(-4133.53, -4449.64)
+scale = Vector2(0.714286, 0.714286)
+curve = SubResource("Curve2D_d4po7")
+
+[node name="PathFollow2D" parent="Island/environment/all_crows/Path2D5" instance=ExtResource("15_vpben")]
+position = Vector2(10435.4, 8035)
+rotation = 3.14159
+
+[node name="static_crow7" parent="Island/environment/all_crows" instance=ExtResource("14_e6b1x")]
+position = Vector2(-406.386, 1361.79)
+scale = Vector2(0.642857, 0.642857)
+
+[node name="ShinyCrow" parent="Island/environment/all_crows" instance=ExtResource("58_184fy")]
+z_index = 1
+position = Vector2(-1322.1, 2118.93)
+scale = Vector2(0.714286, 0.714286)
+
+[node name="all_waterfalls" type="Node" parent="Island/environment"]
+
+[node name="Waterfall" parent="Island/environment/all_waterfalls" instance=ExtResource("31_mjr4y")]
+z_index = -1
+position = Vector2(7909, 4535)
+scale = Vector2(0.6, 0.8)
+offset = 200
+
+[node name="Waterfall2" parent="Island/environment/all_waterfalls" instance=ExtResource("31_mjr4y")]
+z_index = -1
+position = Vector2(4308, 4574)
+scale = Vector2(0.6, 0.8)
+
+[node name="Waterfall3" parent="Island/environment/all_waterfalls" instance=ExtResource("31_mjr4y")]
+z_index = -1
+position = Vector2(4782, 6901)
+scale = Vector2(0.6, 0.8)
+offset = 120
+
+[node name="Waterfall4" parent="Island/environment/all_waterfalls" instance=ExtResource("31_mjr4y")]
+z_index = -1
+position = Vector2(3511, 7001)
+scale = Vector2(0.6, 0.8)
+offset = 300
+
+[node name="Waterfall5" parent="Island/environment/all_waterfalls" instance=ExtResource("31_mjr4y")]
+z_index = -1
+position = Vector2(7763, 6916)
+scale = Vector2(0.6, 0.8)
+offset = 240
+
+[node name="Floor" parent="Island/environment/all_waterfalls" instance=ExtResource("4_7b5fe")]
+position = Vector2(8151, 7232)
+
+[node name="OutWaterfall" type="AnimatedSprite2D" parent="Island/environment/all_waterfalls"]
+position = Vector2(4066.5, 4620)
+scale = Vector2(1.4, 1.4)
+sprite_frames = SubResource("SpriteFrames_v4tdy")
+animation = &"default1"
+autoplay = "default1"
+script = ExtResource("32_ch8bp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Island/environment/all_waterfalls/OutWaterfall"]
+stream = ExtResource("31_ch8bp")
+volume_db = -15.0
+autoplay = true
+bus = &"OtherSFX"
+
+[node name="all_items" type="Node2D" parent="Island/environment"]
+position = Vector2(-4133.53, -4449.64)
+scale = Vector2(0.714286, 0.714286)
+
+[node name="Item2" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(4524, 6213)
+item = ExtResource("43_4d2nn")
+
+[node name="Item" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(386, 8006)
+item = ExtResource("52_yd5j6")
+
+[node name="Item4" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(10708, 8043)
+item = ExtResource("53_ol6ib")
+
+[node name="Item5" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(11410, 8040)
+item = SubResource("Resource_5n7hk")
+
+[node name="Item6" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(10855, 6190)
+item = ExtResource("17_tmwmb")
+
+[node name="Item7" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(11833, 9049)
+item = ExtResource("43_4d2nn")
+
+[node name="Item8" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(5578, 8553)
+item = ExtResource("17_tmwmb")
+
+[node name="Item9" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(1638, 8541)
+item = SubResource("Resource_c4v7b")
+
+[node name="Item10" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(345.001, 9031.99)
+item = ExtResource("43_4d2nn")
+
+[node name="Item11" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(743, 5656)
+item = ExtResource("17_tmwmb")
+
+[node name="Item12" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(4956, 4420)
+item = SubResource("Resource_h4qr7")
+
+[node name="Item13" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(4002, 4695)
+item = ExtResource("43_4d2nn")
+
+[node name="Item14" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(5883, 2872)
+item = ExtResource("43_4d2nn")
+
+[node name="Item15" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(5969, 3659)
+item = ExtResource("17_tmwmb")
+
+[node name="Item16" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(6452, 3230)
+item = ExtResource("43_4d2nn")
+
+[node name="Item17" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(8207, 4570)
+item = ExtResource("43_4d2nn")
+
+[node name="Item18" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(5769, 7053)
+item = ExtResource("43_4d2nn")
+
+[node name="Item19" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(3865, 6883)
+item = SubResource("Resource_7xfyx")
+
+[node name="Item20" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(3335, 7292)
+item = ExtResource("43_4d2nn")
+
+[node name="Item21" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(2724, 8712)
+item = ExtResource("43_4d2nn")
+
+[node name="Item22" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(10815, 6626)
+item = ExtResource("43_4d2nn")
+
+[node name="Item23" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(9807, 7370)
+item = ExtResource("43_4d2nn")
+
+[node name="Item24" parent="Island/environment/all_items" instance=ExtResource("21_74gyt")]
+position = Vector2(6737, 6895)
+item = SubResource("Resource_7tvkr")
+
+[node name="all_spikes" type="Node2D" parent="Island/environment"]
+script = ExtResource("36_mu7i0")
+
+[node name="Spike1" type="Sprite2D" parent="Island/environment/all_spikes"]
+position = Vector2(-3490.67, 460.714)
+scale = Vector2(0.932493, 1.0182)
+texture = ExtResource("47_stsei")
+
+[node name="Spike2" type="Sprite2D" parent="Island/environment/all_spikes"]
+position = Vector2(-432.1, 1113.21)
+scale = Vector2(0.714286, 0.967568)
+texture = ExtResource("28_nb1gb")
+
+[node name="Spike3" type="Sprite2D" parent="Island/environment/all_spikes"]
+position = Vector2(-417.1, 1076.79)
+scale = Vector2(0.714286, 0.906819)
+texture = ExtResource("29_c46o2")
+
+[node name="Spike4" type="Sprite2D" parent="Island/environment/all_spikes"]
+position = Vector2(576.471, -915.357)
+scale = Vector2(0.714286, 0.880354)
+texture = ExtResource("30_1dhvn")
+
+[node name="Spike5" type="Sprite2D" parent="Island/environment/all_spikes"]
+position = Vector2(2184.33, 753.929)
+scale = Vector2(0.837053, 0.88993)
+texture = ExtResource("31_184fy")
+
+[node name="Fishing" parent="Island" instance=ExtResource("28_fekcl")]
+z_index = 1
+position = Vector2(-2265, 273.571)
+scale = Vector2(0.714286, 0.714286)
+
+[node name="NPCs" type="Node2D" parent="Island"]
+position = Vector2(2650, 2442.86)
+scale = Vector2(0.714286, 0.714286)
+
+[node name="Nutmeg" parent="Island/NPCs" instance=ExtResource("26_fekcl")]
+position = Vector2(3.00195, -233)
+npc_name = "Nutmeg"
+npc_animation = ExtResource("27_qt2b5")
+beep = ExtResource("49_h4qr7")
+dialogue_resource = SubResource("Resource_qt2b5")
+dialogue_colour = Color(0.835294, 0.529412, 0.184314, 1)
+dialogue_text_colour = Color(0.356863, 0.2, 0.0823529, 1)
+quests = Array[ExtResource("30_v0lh2")]([SubResource("Resource_ia7qy")])
+
+[node name="ShopSeller" parent="Island/NPCs" instance=ExtResource("21_tfi8t")]
+z_index = 1
+position = Vector2(-3975, -3201)
+npc_name = "Mocha"
+npc_animation = ExtResource("29_wrl4d")
+beep = ExtResource("55_uhxb7")
+dialogue_resource = SubResource("Resource_e7a4y")
+dialogue_colour = Color(0.324084, 0.166387, 0.0814454, 1)
+dialogue_text_colour = Color(0.609614, 0.298678, 0.15845, 1)
+quests = Array[ExtResource("30_v0lh2")]([SubResource("Resource_4d2nn"), SubResource("Resource_tmwmb")])
+shop_items = Array[ExtResource("24_w0q1k")]([ExtResource("57_q0jin"), ExtResource("33_stsei"), ExtResource("34_v4tdy"), ExtResource("35_3ime7"), ExtResource("33_v0lh2")])
+
+[node name="NPC" parent="Island/NPCs" instance=ExtResource("16_wwi2v")]
+position = Vector2(-2045, -3234)
+npc_name = "Misha"
+npc_animation = ExtResource("32_slt5f")
+height_offset = -110
+beep = ExtResource("61_csoom")
+dialogue_resource = SubResource("Resource_immi7")
+dialogue_colour = Color(0.137255, 0.180392, 0.282353, 1)
+dialogue_text_colour = Color(0.847059, 0.407843, 0.541176, 1)
+quests = Array[ExtResource("30_v0lh2")]([SubResource("Resource_1dhvn"), SubResource("Resource_yd5j6"), SubResource("Resource_lgo0g")])
+
+[node name="NPC3" parent="Island/NPCs" instance=ExtResource("16_wwi2v")]
+position = Vector2(248.001, -3232)
+npc_name = "Mellow"
+npc_animation = ExtResource("34_2ldkq")
+area_offset = 370
+height_offset = -100
 facing_left = true
-dialogue_resource = SubResource("Resource_65w77")
-dialogue_colour = Color(0.81, 0.71523, 0.1782, 1)
-dialogue_text_colour = Color(0.71, 0.534275, 0.00709999, 1)
+beep = ExtResource("64_cmjn7")
+dialogue_resource = SubResource("Resource_t4yja")
+dialogue_colour = Color(0.945098, 0.854902, 0.65098, 1)
+dialogue_text_colour = Color(0.329991, 0.0874071, 0.0238514, 1)
+quests = Array[ExtResource("30_v0lh2")]([SubResource("Resource_urxvd")])
+
+[node name="NPC4" parent="Island/NPCs" instance=ExtResource("16_wwi2v")]
+position = Vector2(-6620, -351)
+npc_name = "Kiwi"
+npc_animation = ExtResource("35_v0lh2")
+area_offset = 350
+height_offset = -90
+facing_left = true
+beep = ExtResource("63_7tvkr")
+dialogue_resource = SubResource("Resource_stsei")
+dialogue_colour = Color(0.105882, 0.192157, 0.262745, 1)
+dialogue_text_colour = Color(0.47451, 0.498039, 0.278431, 1)
+
+[node name="NPC5" parent="Island/NPCs" instance=ExtResource("16_wwi2v")]
+position = Vector2(-6070, -359)
+npc_name = "Mango"
+npc_animation = ExtResource("36_tmwmb")
+area_offset = -50
+height_offset = -90
+beep = ExtResource("63_c4v7b")
+dialogue_resource = SubResource("Resource_v4tdy")
+dialogue_colour = Color(0.109804, 0.192157, 0.262745, 1)
+dialogue_text_colour = Color(0.411765, 0.517647, 0.290196, 1)
+quests = Array[ExtResource("30_v0lh2")]([SubResource("Resource_npree"), SubResource("Resource_cxmmu")])
+
+[node name="NPC6" parent="Island/NPCs" instance=ExtResource("16_wwi2v")]
+position = Vector2(-2004, -379)
+npc_name = "Marigold"
+npc_animation = ExtResource("37_0p4ep")
+area_offset = 350
+height_offset = -65
+facing_left = true
+beep = ExtResource("64_w4vym")
+dialogue_resource = SubResource("Resource_3ime7")
+dialogue_colour = Color(0.945098, 0.780392, 0.34902, 1)
+dialogue_text_colour = Color(0.760784, 0.501961, 0.0823529, 1)
+quests = Array[ExtResource("30_v0lh2")]([SubResource("Resource_cncxv")])
+
+[node name="NPC7" parent="Island/NPCs" instance=ExtResource("16_wwi2v")]
+position = Vector2(752.002, -353)
+npc_name = "Cinnamon"
+npc_animation = ExtResource("38_4d2nn")
+area_offset = 320
+height_offset = -100
+facing_left = true
+beep = ExtResource("67_7xfyx")
+dialogue_resource = SubResource("Resource_w4vym")
+dialogue_colour = Color(0.945098, 0.780392, 0.34902, 1)
+dialogue_text_colour = Color(0.364706, 0.192157, 0.0627451, 1)
+quests = Array[ExtResource("30_v0lh2")]([SubResource("Resource_nb1gb")])
+
+[node name="Bodyguard" parent="Island/NPCs" instance=ExtResource("42_4d2nn")]
+position = Vector2(-908.999, -3235)
+npc_name = "Brute"
+npc_animation = ExtResource("33_ijaif")
+height_offset = -110
+wall_offset = 450
+beep = ExtResource("74_cmjn7")
+dialogue_resource = SubResource("Resource_mu7i0")
+dialogue_colour = Color(0.176471, 0.207843, 0.235294, 1)
+dialogue_text_colour = Color(0.321569, 0.380392, 0.486275, 1)
+quests = Array[ExtResource("30_v0lh2")]([SubResource("Resource_3guj1")])
+
+[node name="InfoOverlays" type="Node2D" parent="Island"]
+
+[node name="InfoOverlay" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(-67.1431, -622.143)
+scale = Vector2(0.714286, 0.714286)
+txt = "This 'challenge' is HARD and very skippable, but you can't come back. Don't crash out."
+
+[node name="InfoOverlay2" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(-1805, 148.572)
+scale = Vector2(0.714286, 0.714286)
+txt = "Hold E to cast line, and hold E to catch fish!"
+
+[node name="InfoOverlay3" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(176.428, -1465)
+scale = Vector2(0.714286, 0.714286)
+txt = "You can press S/DOWN_ARROW to lie down."
+
+[node name="InfoOverlay4" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(-399.286, -1865)
+scale = Vector2(0.714286, 0.714286)
+txt = "Beware the crows. They're annoying."
+
+[node name="InfoOverlay5" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(1065, -610)
+scale = Vector2(0.714286, 0.714286)
+txt = "Press SHIFT while wet to sprint and break walls."
+
+[node name="InfoOverlay6" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(503.571, -602.857)
+scale = Vector2(0.714286, 0.714286)
+txt = "Lying down means you get dry."
+
+[node name="InfoOverlay7" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(1720, -620.714)
+scale = Vector2(0.714286, 0.714286)
+txt = "Breakable platforms break if you're not dry!"
+
+[node name="InfoOverlay8" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(372.857, 174.286)
+scale = Vector2(0.714286, 0.714286)
+txt = "You can press S/DOWN_ARROW to phase through the floor."
+
+[node name="InfoOverlay9" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(-736.428, 162.857)
+scale = Vector2(0.714286, 0.714286)
+txt = "You can get on top of some boxes!"
+
+[node name="InfoOverlay10" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(3167.14, 2188.57)
+scale = Vector2(0.714286, 0.714286)
+txt = "Talk to Nutmeg and press Q to play. You must entertain."
+
+[node name="InfoOverlay11" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(8657.14, 2270.71)
+scale = Vector2(0.714286, 0.714286)
+txt = "Why are you here??? Go back."
+
+[node name="InfoOverlay12" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(13156.4, 2262.86)
+scale = Vector2(0.714286, 0.714286)
+txt = "Really."
+
+[node name="InfoOverlay13" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(-7785.71, 2228.57)
+scale = Vector2(0.714286, 0.714286)
+txt = "Why are you here??? Go back."
+
+[node name="InfoOverlay14" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(-13634.3, 2192.86)
+scale = Vector2(0.714286, 0.714286)
+txt = "Really."
+
+[node name="InfoOverlay15" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(-639.286, -2102.86)
+scale = Vector2(0.714286, 0.714286)
+txt = "STEAL ALL THE FEATHERS."
+
+[node name="InfoOverlay16" parent="Island/InfoOverlays" instance=ExtResource("19_c46o2")]
+position = Vector2(-441.429, 186.428)
+scale = Vector2(0.714286, 0.714286)
+txt = "Press E to talk to characters. It might eb useful for the feather hunt..."
+
+[node name="AudioStreamBreeze" type="AudioStreamPlayer2D" parent="Island"]
+position = Vector2(-2031.43, 13.5714)
+stream = ExtResource("68_cxmmu")
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamBeach" type="AudioStreamPlayer2D" parent="Island"]
+position = Vector2(4938.57, 2263.57)
+stream = ExtResource("69_w4vym")
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamBeach2" type="AudioStreamPlayer2D" parent="Island"]
+position = Vector2(-4288.57, 2362.86)
+stream = ExtResource("69_w4vym")
+autoplay = true
+bus = &"Music"
+
+[node name="EndGame" parent="." instance=ExtResource("79_436vp")]
+position = Vector2(11074, 9086)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = 100
+offset_left = 3853.0
+offset_top = 2320.0
+offset_right = 5773.0
+offset_bottom = 3400.0
+stream = ExtResource("80_8rv70")

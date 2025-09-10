@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://321x8ivv05b8"]
+
+[ext_resource type="Texture2D" uid="uid://cwrki5138ldie" path="res://assets/style1/inventory/poppies_icon.png" id="1_acego"]
+[ext_resource type="Script" uid="uid://bo4uyj27yi1sc" path="res://resources/quest/item.gd" id="2_mjjoq"]
+
+[resource]
+script = ExtResource("2_mjjoq")
+id = "Poppies"
+quantity = 3
+cost = 500
+desc = "They have a certain.... smell. Just give them to Mellow....."
+icon = ExtResource("1_acego")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"

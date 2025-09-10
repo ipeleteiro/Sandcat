@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxlnm2grf67c4"]
+
+[ext_resource type="Script" uid="uid://chqdvvsjy1wjl" path="res://scripts/shiny_crow.gd" id="1_85yin"]
+[ext_resource type="PackedScene" uid="uid://bedku0hjowicc" path="res://scenes/other/info_overlay.tscn" id="1_abd1x"]
+[ext_resource type="PackedScene" uid="uid://b6u584hg134hx" path="res://scenes/sprites/moving_crow.tscn" id="2_a7745"]
+[ext_resource type="Script" uid="uid://d0wcv0223s0rk" path="res://scenes/sprites/moving_shiny_crow.gd" id="3_0jvo1"]
+[ext_resource type="Texture2D" uid="uid://dddv2242rqrb2" path="res://assets/style1/other/lata.png" id="4_dnf55"]
+[ext_resource type="AudioStream" uid="uid://dd7e4eqfc3e8f" path="res://assets/music/crow_caw.mp3" id="6_0jvo1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7745"]
+size = Vector2(137, 252)
+
+[sub_resource type="Curve2D" id="Curve2D_fwsgn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1336, -807, 0, 0, 0, 0, 225, -85, 0, 0, 0, 0, 1339, -807)
+}
+point_count = 3
+
+[node name="ShinyCrow" type="Node2D"]
+script = ExtResource("1_85yin")
+
+[node name="ActionZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionZone"]
+position = Vector2(218, -127)
+shape = SubResource("RectangleShape2D_a7745")
+
+[node name="Path2D2" type="Path2D" parent="."]
+curve = SubResource("Curve2D_fwsgn")
+
+[node name="PathFollow2D" parent="Path2D2" instance=ExtResource("2_a7745")]
+position = Vector2(1334.65, -806.124)
+rotation = 3.03164
+script = ExtResource("3_0jvo1")
+
+[node name="Lata" type="Sprite2D" parent="Path2D2/PathFollow2D"]
+position = Vector2(-90.268, -32.1338)
+rotation = -2.78904
+scale = Vector2(0.0423935, 0.0423935)
+texture = ExtResource("4_dnf55")
+
+[node name="InfoOverlay" parent="." instance=ExtResource("1_abd1x")]
+position = Vector2(217, -116)
+txt = "Press Q to wear shiny collar"
+
+[node name="AudioStreamCaws" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_0jvo1")
+volume_db = -5.0
+
+[connection signal="body_entered" from="ActionZone" to="." method="_on_action_zone_body_entered"]
+[connection signal="body_exited" from="ActionZone" to="." method="_on_action_zone_body_exited"]

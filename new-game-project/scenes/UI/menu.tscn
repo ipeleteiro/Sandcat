@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://btwvg4nxvbg4u"]
+[gd_scene load_steps=7 format=3 uid="uid://btwvg4nxvbg4u"]
 
 [ext_resource type="Script" uid="uid://dn361dqry7e2q" path="res://scripts/menu.gd" id="1_2un8v"]
-[ext_resource type="Shader" uid="uid://cwhd4l0bkkj52" path="res://assets/shaders/root_node.gdshader" id="2_iysyy"]
-[ext_resource type="Texture2D" uid="uid://c0n7qhnqki653" path="res://assets/style3/environment/cave_background.png" id="3_ny0ke"]
+[ext_resource type="PackedScene" uid="uid://dd0xtacp8k0eh" path="res://scenes/UI/inventory_ui.tscn" id="2_2tfbb"]
+[ext_resource type="Texture2D" uid="uid://d1poev3pa7y3o" path="res://assets/style1/inventory/coins_icon.png" id="3_ny0ke"]
+[ext_resource type="Texture2D" uid="uid://bdwcp3y71jgbu" path="res://assets/style1/inventory/feather_icon.png" id="4_78n2u"]
+[ext_resource type="Texture2D" uid="uid://d3gpbqts3mrav" path="res://assets/style1/inventory/fish_icon.png" id="5_svcqa"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_78n2u"]
-shader = ExtResource("2_iysyy")
-shader_parameter/tile_scale = 3.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u81ku"]
+bg_color = Color(0.168627, 0.0588235, 0.00784314, 0.643137)
 
 [node name="Menu" type="Control"]
 process_mode = 3
@@ -19,65 +20,236 @@ grow_vertical = 2
 script = ExtResource("1_2un8v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
 
-[node name="ArtStyleButton" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Button" type="Button" parent="CanvasLayer/ArtStyleButton"]
-layout_mode = 1
+[node name="ArtStyleButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 936.0
+offset_left = -173.0
 offset_top = 10.0
-offset_right = 1099.0
+offset_right = -10.0
 offset_bottom = 56.0
 grow_horizontal = 0
-text = "Change Art Style"
+text = "Menu"
 
 [node name="ArtStyleMenu" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 393.0
-offset_top = 342.0
-offset_right = 433.0
-offset_bottom = 382.0
-
-[node name="cave_background" type="Polygon2D" parent="CanvasLayer/ArtStyleMenu"]
-light_mask = 0
-z_index = -10
-texture_repeat = 2
-material = SubResource("ShaderMaterial_78n2u")
-position = Vector2(-231.609, 21.316)
-scale = Vector2(0.284926, 0.297511)
-texture = ExtResource("3_ny0ke")
-polygon = PackedVector2Array(-1075.34, -1644.7, -1082.35, 1800.55, 3887.36, 1881.22, 4010.2, -1812.76)
-uv = PackedVector2Array(551, -1257, 39, -1124, -459, -602, -555, 49, -561, 686, -490, 1016, 3560, 1024, 3411, -649, 3038, -1014, 2608, -1105, 1953, -881, 1398, -715, 1042, -740, 827, -1080)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ArtStyleMenu"]
-offset_top = -70.0
-offset_right = 372.0
-offset_bottom = 180.0
-
-[node name="digital_art" type="Button" parent="CanvasLayer/ArtStyleMenu/VBoxContainer"]
 process_mode = 3
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 100.0
+offset_right = 20.0
+offset_bottom = 140.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ArtStyleMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -15.5
+offset_right = 186.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="digital_art" type="Button" parent="CanvasLayer/ArtStyleMenu/HBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 text = "Digital Art"
 
-[node name="pixel_art" type="Button" parent="CanvasLayer/ArtStyleMenu/VBoxContainer"]
+[node name="pixel_art" type="Button" parent="CanvasLayer/ArtStyleMenu/HBoxContainer"]
 process_mode = 3
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Pixel Art"
 
-[node name="pencil_art" type="Button" parent="CanvasLayer/ArtStyleMenu/VBoxContainer"]
+[node name="pencil_art" type="Button" parent="CanvasLayer/ArtStyleMenu/HBoxContainer"]
 process_mode = 3
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "Pencil Art"
 
-[connection signal="pressed" from="CanvasLayer/ArtStyleButton/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/ArtStyleMenu/VBoxContainer/digital_art" to="." method="_on_digital_art_pressed"]
-[connection signal="pressed" from="CanvasLayer/ArtStyleMenu/VBoxContainer/pixel_art" to="." method="_on_pixel_art_pressed"]
-[connection signal="pressed" from="CanvasLayer/ArtStyleMenu/VBoxContainer/pencil_art" to="." method="_on_pencil_art_pressed"]
+[node name="InventoryUI" parent="CanvasLayer" instance=ExtResource("2_2tfbb")]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+process_mode = 4
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u81ku")
+
+[node name="ItemCounts" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 26.0
+offset_top = 26.0
+offset_right = 66.0
+offset_bottom = 66.0
+
+[node name="CoinsIcon" type="Sprite2D" parent="CanvasLayer/ItemCounts"]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("3_ny0ke")
+
+[node name="FeatherIcon" type="Sprite2D" parent="CanvasLayer/ItemCounts"]
+position = Vector2(0, 44)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("4_78n2u")
+
+[node name="FishIcon" type="Sprite2D" parent="CanvasLayer/ItemCounts"]
+position = Vector2(0, 89)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("5_svcqa")
+
+[node name="CoinsNum" type="Label" parent="CanvasLayer/ItemCounts"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = -12.0
+offset_right = 111.0
+offset_bottom = 11.0
+text = "1"
+
+[node name="FeatherNum" type="Label" parent="CanvasLayer/ItemCounts"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 33.0
+offset_right = 111.0
+offset_bottom = 56.0
+text = "Coins Num"
+
+[node name="FishNum" type="Label" parent="CanvasLayer/ItemCounts"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 78.0
+offset_right = 111.0
+offset_bottom = 101.0
+text = "Coins Num"
+
+[node name="Info" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CrowHits" type="Label" parent="CanvasLayer/Info"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 80.0
+offset_right = 93.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Number of crow hits: 10"
+horizontal_alignment = 1
+
+[node name="Timer1" type="Label" parent="CanvasLayer/Info"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 131.5
+offset_right = 93.0
+offset_bottom = 154.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Digital Art - 03:50"
+horizontal_alignment = 1
+
+[node name="Timer2" type="Label" parent="CanvasLayer/Info"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 150.0
+offset_right = 93.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pixel Art - 03:50"
+horizontal_alignment = 1
+
+[node name="Timer3" type="Label" parent="CanvasLayer/Info"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 170.0
+offset_right = 93.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Pencil Art - 03:50"
+horizontal_alignment = 1
+
+[node name="Reset" type="Button" parent="CanvasLayer"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -174.0
+offset_right = 66.0
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Reset Character"
+
+[node name="Controls" type="Label" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -188.0
+offset_right = 247.0
+offset_bottom = -9.0
+grow_vertical = 0
+text = "Controls:
+Open/Close Menu - ESC
+Movement - WASD/arrow_keys
+Lie Down - S/DOWN_ARROW
+Sprint - SHIFT
+Interact with NPCs - E
+Fish - E (hold)
+Ball Minigame - Q"
+
+[connection signal="pressed" from="CanvasLayer/ArtStyleButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ArtStyleMenu/HBoxContainer/digital_art" to="." method="_on_digital_art_pressed"]
+[connection signal="pressed" from="CanvasLayer/ArtStyleMenu/HBoxContainer/pixel_art" to="." method="_on_pixel_art_pressed"]
+[connection signal="pressed" from="CanvasLayer/ArtStyleMenu/HBoxContainer/pencil_art" to="." method="_on_pencil_art_pressed"]
+[connection signal="pressed" from="CanvasLayer/Reset" to="." method="_on_reset_pressed"]

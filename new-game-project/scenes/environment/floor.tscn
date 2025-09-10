@@ -1,19 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dve3kyehsa1vu"]
+[gd_scene load_steps=4 format=3 uid="uid://dve3kyehsa1vu"]
 
-[ext_resource type="Texture2D" uid="uid://drpjf5c2qjm2o" path="res://assets/style3/environment/floor.png" id="1_ukw5w"]
+[ext_resource type="Script" uid="uid://nixth24msdyv" path="res://scripts/artstyle/floor.gd" id="1_jf6pd"]
+[ext_resource type="Texture2D" uid="uid://dg7krh2juq3cc" path="res://assets/style1/environment/floor.png" id="2_jf6pd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rvl0"]
 size = Vector2(388, 26)
 
-[node name="Node2D" type="Node2D"]
+[node name="Floor" type="Node2D"]
+scale = Vector2(0.6, 0.8)
+script = ExtResource("1_jf6pd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1, -81)
 
 [node name="Floor" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-1.50003, 82)
+position = Vector2(-4.33333, 64.75)
 scale = Vector2(0.24515, 0.198276)
-texture = ExtResource("1_ukw5w")
+texture = ExtResource("2_jf6pd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-3, 84)

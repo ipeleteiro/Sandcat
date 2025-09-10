@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bedku0hjowicc"]
+
+[ext_resource type="Script" uid="uid://baw61d1ur1mya" path="res://scripts/info_overlay.gd" id="1_ixprb"]
+[ext_resource type="Texture2D" uid="uid://dt6gurwbp0n37" path="res://assets/style1/other/info_overlay.png" id="2_017d3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmtyn"]
+size = Vector2(141, 253)
+
+[node name="InfoOverlay" type="Area2D"]
+script = ExtResource("1_ixprb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -10.5)
+shape = SubResource("RectangleShape2D_rmtyn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -338.5
+offset_top = 30.0
+offset_right = 338.5
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Filler text"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Pannel" type="Sprite2D" parent="CanvasLayer/Label"]
+z_index = -2
+position = Vector2(337, 12)
+scale = Vector2(0.416248, 0.28442)
+texture = ExtResource("2_017d3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

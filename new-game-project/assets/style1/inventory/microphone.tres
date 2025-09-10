@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://7xfbnrqxjfy0"]
+
+[ext_resource type="Texture2D" uid="uid://eq4rsre31a12" path="res://assets/style1/inventory/microphone.png" id="1_7iq0k"]
+[ext_resource type="Texture2D" uid="uid://f0gkmsff8gnt" path="res://assets/style2/inventory/Untitled_Artwork 59.png" id="2_7iq0k"]
+[ext_resource type="Texture2D" uid="uid://ddme5l8kbw3po" path="res://assets/style3/inventory/Untitled_Artwork 49.png" id="3_ipd2x"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7iq0k")
+}],
+"loop": true,
+"name": &"default1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7iq0k")
+}],
+"loop": true,
+"name": &"default2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ipd2x")
+}],
+"loop": true,
+"name": &"default3",
+"speed": 5.0
+}]

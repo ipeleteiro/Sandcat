@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://2qa6553mwvko"]
+
+[ext_resource type="Script" uid="uid://ckfbtuygvpbea" path="res://scripts/shop_seller.gd" id="1_mw3lc"]
+[ext_resource type="PackedScene" uid="uid://dtpqunfnkxai3" path="res://scenes/dialogue/dialogue_manager.tscn" id="2_mw3lc"]
+[ext_resource type="PackedScene" uid="uid://bor46mf15m1ih" path="res://scenes/UI/shop_ui.tscn" id="3_cruh2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rton3"]
+height = 134.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yhi2"]
+size = Vector2(220, 94.0003)
+
+[node name="ShopSeller" type="CharacterBody2D" groups=["NPC"]]
+script = ExtResource("1_mw3lc")
+
+[node name="body" type="CollisionShape2D" parent="."]
+position = Vector2(186, 116)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_rton3")
+disabled = true
+one_way_collision_margin = 0.0
+
+[node name="talking_area" type="Area2D" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="talking_area"]
+position = Vector2(-29, 13)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_4yhi2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(161, -55)
+scale = Vector2(0.264363, 0.264363)
+animation = &""
+
+[node name="DialogueManager" parent="." instance=ExtResource("2_mw3lc")]
+position = Vector2(186, 65)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ShopUI" parent="CanvasLayer" instance=ExtResource("3_cruh2")]
+
+[connection signal="body_entered" from="talking_area" to="." method="_on_talking_area_body_entered"]
+[connection signal="body_exited" from="talking_area" to="." method="_on_talking_area_body_exited"]

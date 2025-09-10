@@ -1,34 +1,40 @@
 extends Node2D
 
 @onready var area_2d: Area2D = $StaticBody2D/Area2D
-@onready var collision_shape_2d: CollisionShape2D = $StaticBody2D/Area2D/CollisionShape2D
-@onready var breaking_platform: Sprite2D = $StaticBody2D/BreakingPlatform
+@onready var collision_shape_2d: CollisionShape2D = $StaticBody2D/CollisionShape2D
+@onready var breaking_platform: AnimatedSprite2D = $StaticBody2D/BreakingPlatform
+@onready var audio_stream_break: AudioStreamPlayer2D = $AudioStreamBreak
 
+var break_platform = false
+var restore_platform = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "sandcat":
 		if body.is_head_wet:
-			break_platform()
+			break_platform = true
+
+var restore_timer = 0
+var break_timer = 0
+
+func _ready() -> void:
+	breaking_platform.play("restore" + ArtStyle.artstyle)
 	
-func break_platform():
-	var tween = create_tween()
+func _process(delta: float) -> void:
+	if break_platform:
+		restore_timer = 0
+		restore_platform = true
+		break_timer += delta
+		if break_timer > 0.5:
+			break_platform = false
+			collision_shape_2d.disabled = true
+			collision_shape_2d.disabled = true
+			breaking_platform.play("break" + ArtStyle.artstyle)
+			audio_stream_break.play()
 	
-	# Shake up/down a few times
-	var original_pos = position
-	var shake_time = 0.1
-	
-	tween.tween_property(self, "position", original_pos + Vector2(0, -1), shake_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(self, "position", original_pos + Vector2(0, 1), shake_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(self, "position", original_pos + Vector2(0, -3), shake_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(self, "position", original_pos + Vector2(0, 3), shake_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(self, "position", original_pos + Vector2(0, -5), shake_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(self, "position", original_pos + Vector2(0, 5), shake_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(self, "position", original_pos, shake_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	
-	
-	tween.tween_callback(Callable(self, "disable_and_hide"))
-	
-func disable_and_hide():
-	breaking_platform.visible = false
-	collision_shape_2d.disabled = true
-	queue_free()
+	if restore_platform:
+		restore_timer += delta
+		if restore_timer > 5:
+			collision_shape_2d.disabled = false
+			restore_platform = false
+			breaking_platform.play("restore" + ArtStyle.artstyle)
+			audio_stream_break.play()

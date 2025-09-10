@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://825nv3x0dyxd"]
+
+[ext_resource type="Script" uid="uid://bq0ads1exnn5i" path="res://scripts/kids.gd" id="1_u7imk"]
+[ext_resource type="PackedScene" uid="uid://dtpqunfnkxai3" path="res://scenes/dialogue/dialogue_manager.tscn" id="2_6t7l0"]
+[ext_resource type="Texture2D" uid="uid://dqql4a05ccf0e" path="res://assets/style1/other/ball.png" id="4_oetl3"]
+[ext_resource type="AudioStream" uid="uid://bjxky0sjufupn" path="res://assets/music/ball.mp3" id="4_u7imk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rton3"]
+height = 134.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yhi2"]
+size = Vector2(220, 94.0003)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iymvv"]
+radius = 13.0
+height = 81.9999
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_elifw"]
+radius = 40.0125
+
+[node name="Kids" type="CharacterBody2D" groups=["NPC"]]
+script = ExtResource("1_u7imk")
+
+[node name="body" type="CollisionShape2D" parent="."]
+position = Vector2(554, -11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_rton3")
+disabled = true
+one_way_collision_margin = 0.0
+
+[node name="talking_area" type="Area2D" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="talking_area"]
+position = Vector2(380, -119)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_4yhi2")
+
+[node name="Nutmeg" type="AnimatedSprite2D" parent="."]
+position = Vector2(554, -147)
+scale = Vector2(0.264363, 0.264363)
+animation = &""
+
+[node name="NutmegHit" type="Area2D" parent="Nutmeg"]
+position = Vector2(0, 514.444)
+rotation = 1.5708
+scale = Vector2(3.78268, 3.78268)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nutmeg/NutmegHit"]
+position = Vector2(-267, 4.00097)
+shape = SubResource("CapsuleShape2D_iymvv")
+
+[node name="DialogueManager" parent="." instance=ExtResource("2_6t7l0")]
+position = Vector2(506, 311)
+
+[node name="Ball" type="Sprite2D" parent="."]
+position = Vector2(540, -339)
+scale = Vector2(0.0494385, 0.0494385)
+texture = ExtResource("4_oetl3")
+
+[node name="BallArea" type="Area2D" parent="Ball"]
+position = Vector2(40.4543, 80.9082)
+scale = Vector2(20.2272, 20.2272)
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/BallArea"]
+position = Vector2(0, -3.99991)
+shape = SubResource("CircleShape2D_elifw")
+
+[node name="AudioStreamBall" type="AudioStreamPlayer2D" parent="Ball"]
+position = Vector2(20.2275, 101.136)
+scale = Vector2(20.2272, 20.2272)
+stream = ExtResource("4_u7imk")
+bus = &"OtherSFX"
+
+[connection signal="body_entered" from="talking_area" to="." method="_on_talking_area_body_entered"]
+[connection signal="body_exited" from="talking_area" to="." method="_on_talking_area_body_exited"]
+[connection signal="area_entered" from="Nutmeg/NutmegHit" to="." method="_on_nutmeg_hit_area_entered"]
+[connection signal="body_entered" from="Nutmeg/NutmegHit" to="." method="_on_nutmeg_hit_body_entered"]
+[connection signal="body_entered" from="Ball/BallArea" to="." method="_on_ball_area_body_entered"]

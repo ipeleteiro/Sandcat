@@ -1,7 +1,21 @@
 extends Node2D
 
+@onready var video_stream_player: VideoStreamPlayer = $VideoStreamPlayer
+@onready var menu: Control = $Menu
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	# keep all waterfalls in node and use for loop when needed
-	$environment/waterfall.sandcat_head_wet.connect($sandcat.head_wet_signal)
+var video_played
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if not video_stream_player.is_playing() and not video_played:
+		play_video()
+
+func play_video():
+	menu.visible = false
+	get_tree().paused = true
+	video_stream_player.play()
+	await video_stream_player.finished
+	get_tree().paused = false
+	video_played = true
+	menu.visible = true
+	menu.show_menu()

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://yipcbs2geog6"]
+
+[ext_resource type="SpriteFrames" uid="uid://dr22fyl5cugf" path="res://assets/style1/inventory/cables.tres" id="1_154vq"]
+[ext_resource type="Texture2D" uid="uid://ls8fytglm4j0" path="res://assets/style1/inventory/cables_icon.png" id="2_wtuup"]
+[ext_resource type="Script" uid="uid://bo4uyj27yi1sc" path="res://resources/quest/item.gd" id="3_2bcrn"]
+
+[resource]
+script = ExtResource("3_2bcrn")
+id = "Cables"
+quantity = 5
+cost = 1
+desc = "A tangle of cables. How did they even get there?? Oh yeah. Crows."
+icon = ExtResource("2_wtuup")
+animation = ExtResource("1_154vq")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"

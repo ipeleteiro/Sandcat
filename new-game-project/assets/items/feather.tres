@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://can121qlk5ec4"]
+
+[ext_resource type="SpriteFrames" uid="uid://d2mb5kihsfymi" path="res://assets/style1/inventory/feather_animation.tres" id="1_u1gi0"]
+[ext_resource type="Texture2D" uid="uid://bdwcp3y71jgbu" path="res://assets/style1/inventory/feather_icon.png" id="2_j2e0k"]
+[ext_resource type="Script" uid="uid://bo4uyj27yi1sc" path="res://resources/quest/item.gd" id="3_p8h4q"]
+
+[resource]
+script = ExtResource("3_p8h4q")
+id = "Feather"
+quantity = 1
+cost = 30
+desc = "STEAL ALL THE FEATHERS"
+icon = ExtResource("2_j2e0k")
+animation = ExtResource("1_u1gi0")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"

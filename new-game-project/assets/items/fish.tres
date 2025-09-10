@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cggvbmcmxlogn"]
+
+[ext_resource type="Texture2D" uid="uid://d3gpbqts3mrav" path="res://assets/style1/inventory/fish_icon.png" id="1_4c4c5"]
+[ext_resource type="Script" uid="uid://bo4uyj27yi1sc" path="res://resources/quest/item.gd" id="3_igny1"]
+
+[resource]
+script = ExtResource("3_igny1")
+id = "Fish"
+quantity = 1000
+cost = 5
+desc = "Nice catch! You can sell these to Mocha."
+icon = ExtResource("1_4c4c5")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"

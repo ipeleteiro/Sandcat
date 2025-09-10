@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c0qij7y37gk3g"]
+
+[ext_resource type="Texture2D" uid="uid://1pe52o2qkaan" path="res://assets/style1/inventory/collar_icon.png" id="1_c0ma6"]
+[ext_resource type="Script" uid="uid://bo4uyj27yi1sc" path="res://resources/quest/item.gd" id="2_spp06"]
+
+[resource]
+script = ExtResource("2_spp06")
+id = "Shiny Collar"
+quantity = 1
+cost = 50
+desc = "SHINY! It will definitelly attract attention... from crows. Careful - they might even try to steal it!"
+icon = ExtResource("1_c0ma6")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"

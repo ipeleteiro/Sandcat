@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://bor46mf15m1ih"]
+
+[ext_resource type="Script" uid="uid://bx3poubn1t7xs" path="res://scripts/shop_ui.gd" id="1_5tinp"]
+[ext_resource type="Texture2D" uid="uid://bns6jgpi2gewa" path="res://assets/style1/inventory/empty_item.png" id="2_smnh3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_brv7c"]
+specular_color = Color(0.848029, 0.585982, 0.299141, 1)
+
+[node name="ShopUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_5tinp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(100, 70)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = 70.0
+offset_right = 350.0
+offset_bottom = 140.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Empty" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+modulate = Color(0.773688, 0.525377, 0.300507, 1)
+layout_mode = 2
+texture = SubResource("CanvasTexture_brv7c")
+expand_mode = 3
+
+[node name="ItemName" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -43.5
+offset_top = 150.0
+offset_right = 43.5
+offset_bottom = 173.0
+grow_horizontal = 2
+text = "Item Name"
+horizontal_alignment = 1
+
+[node name="ItemCost" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -43.5
+offset_top = 170.0
+offset_right = 43.5
+offset_bottom = 193.0
+grow_horizontal = 2
+text = "Item Cost"
+horizontal_alignment = 1
+
+[node name="ItemDesc" type="Label" parent="CanvasLayer"]
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 190.0
+offset_right = 150.0
+offset_bottom = 213.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -3
+text = "Item Description"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Warning" type="Label" parent="CanvasLayer"]
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 43.0
+offset_right = 150.0
+offset_bottom = 66.0
+grow_horizontal = 2
+text = "Warning"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Info" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.0
+offset_top = -154.0
+offset_right = -235.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = -3
+text = "Press E to purchase
+Press F to exit"
+
+[node name="EmptyItem" type="Sprite2D" parent="CanvasLayer/Info"]
+z_index = -1
+position = Vector2(383.5, -26.25)
+scale = Vector2(0.432129, 0.125244)
+texture = ExtResource("2_smnh3")

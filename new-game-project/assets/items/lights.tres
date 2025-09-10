@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://q2eye3jr7blc"]
+
+[ext_resource type="Texture2D" uid="uid://dyy5ssmbmcfl2" path="res://assets/style1/inventory/lights_icon.png" id="1_qt5e8"]
+[ext_resource type="Script" uid="uid://bo4uyj27yi1sc" path="res://resources/quest/item.gd" id="2_y2hoh"]
+
+[resource]
+script = ExtResource("2_y2hoh")
+id = "Lights"
+quantity = 3
+cost = 15
+desc = "Stage lights - maybe useful for a concert?"
+icon = ExtResource("1_qt5e8")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"

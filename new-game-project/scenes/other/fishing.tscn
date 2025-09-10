@@ -1,0 +1,106 @@
+[gd_scene load_steps=15 format=3 uid="uid://bqxbt3y584kxk"]
+
+[ext_resource type="Script" uid="uid://defpreol1g1b1" path="res://scenes/other/fishing.gd" id="1_0knn6"]
+[ext_resource type="Texture2D" uid="uid://ve66otwuenao" path="res://assets/style1/other/fishing_rod.png" id="1_r4e57"]
+[ext_resource type="Texture2D" uid="uid://c723xor5hq6bc" path="res://assets/style1/environment/splash.png" id="3_ftf12"]
+[ext_resource type="Texture2D" uid="uid://dqcog4im0wg60" path="res://assets/style1/inventory/fish.png" id="4_qnw6h"]
+[ext_resource type="AudioStream" uid="uid://di1kl8sadnmig" path="res://assets/music/fishing-sound.mp3" id="5_3soet"]
+[ext_resource type="AudioStream" uid="uid://dj0bo3xj3gd1j" path="res://assets/music/fishing_line.mp3" id="6_b7dwt"]
+
+[sub_resource type="Gradient" id="Gradient_0knn6"]
+offsets = PackedFloat32Array(0, 0.545, 1)
+colors = PackedColorArray(0.183967, 0.313074, 0.990357, 1, 0.183967, 0.313074, 0.990357, 1, 0.183967, 0.313074, 0.990357, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ftf12"]
+gradient = SubResource("Gradient_0knn6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnw6h"]
+size = Vector2(1093, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4g8p3"]
+size = Vector2(122, 235)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnw6h"]
+atlas = ExtResource("3_ftf12")
+region = Rect2(0, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g8p3"]
+atlas = ExtResource("3_ftf12")
+region = Rect2(1598, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3soet"]
+atlas = ExtResource("3_ftf12")
+region = Rect2(799, 0, 799, 1290)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7dwt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnw6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g8p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3soet")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fishing" type="Node2D"]
+script = ExtResource("1_0knn6")
+
+[node name="FishingArea" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FishingArea"]
+visible = false
+position = Vector2(-394.5, 54.5)
+scale = Vector2(4.26172, 129)
+texture = SubResource("GradientTexture1D_ftf12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishingArea"]
+position = Vector2(-393.5, 91.5)
+shape = SubResource("RectangleShape2D_qnw6h")
+
+[node name="PlayerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+position = Vector2(371, -127)
+shape = SubResource("RectangleShape2D_4g8p3")
+
+[node name="FishingRod" type="Sprite2D" parent="."]
+position = Vector2(370.879, -159.25)
+scale = Vector2(0.256311, 0.256311)
+texture = ExtResource("1_r4e57")
+
+[node name="FishingLine" type="Line2D" parent="."]
+points = PackedVector2Array(233, -240, 200, -20)
+width = 2.0
+
+[node name="WaterSplash" type="AnimatedSprite2D" parent="."]
+position = Vector2(-155, -95)
+scale = Vector2(0.18836, 0.18836)
+sprite_frames = SubResource("SpriteFrames_b7dwt")
+autoplay = "default"
+frame_progress = 0.788317
+
+[node name="Fish" type="Sprite2D" parent="."]
+position = Vector2(517, -329)
+scale = Vector2(0.078125, 0.078125)
+texture = ExtResource("4_qnw6h")
+
+[node name="AudioStreamFishCaught" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3soet")
+bus = &"OtherSFX"
+
+[node name="AudioStreamLine" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_b7dwt")
+volume_db = -10.0
+pitch_scale = 0.8
+bus = &"OtherSFX"
+
+[connection signal="body_entered" from="FishingArea" to="." method="_on_fishing_area_body_entered"]
+[connection signal="body_entered" from="PlayerArea" to="." method="_on_player_area_body_entered"]
+[connection signal="body_exited" from="PlayerArea" to="." method="_on_player_area_body_exited"]

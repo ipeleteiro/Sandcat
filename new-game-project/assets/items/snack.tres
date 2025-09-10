@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ccumk3bmjaeqc"]
+
+[ext_resource type="Texture2D" uid="uid://bs5o2nu75alui" path="res://assets/style1/inventory/snack_icon.png" id="1_4defg"]
+[ext_resource type="Script" uid="uid://bo4uyj27yi1sc" path="res://resources/quest/item.gd" id="2_pbnwh"]
+
+[resource]
+script = ExtResource("2_pbnwh")
+id = "Snack"
+quantity = 5
+cost = 10
+desc = "They're great! For some people! Sandcat isn't.... a fan. It's someone's favourite though."
+icon = ExtResource("1_4defg")
+metadata/_custom_type_script = "uid://bo4uyj27yi1sc"

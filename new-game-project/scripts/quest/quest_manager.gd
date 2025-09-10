@@ -19,11 +19,11 @@ func update_quest(quest_id: String, state: String):
 			remove_quest(quest_id)
 
 func active_quests() -> Array:
-	var active_quests = []
+	var active_quests_arr = []
 	for quest in quests.values():
 		if quest.state == "in_progress":
-			active_quests.append(quest)
-	return active_quests
+			active_quests_arr.append(quest)
+	return active_quests_arr
 
 func active_talk_quests() -> Array:
 	var talk_quests = []

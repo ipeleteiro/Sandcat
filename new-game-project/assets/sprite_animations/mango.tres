@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dnj6le3m8i37p"]
+
+[ext_resource type="Texture2D" uid="uid://cnq2civgbmogf" path="res://assets/style1/sprites/mango1.png" id="1_5857p"]
+[ext_resource type="Texture2D" uid="uid://2fbgfwc6vk6e" path="res://assets/style2/sprites/Untitled_Artwork 41.png" id="2_rjvww"]
+[ext_resource type="Texture2D" uid="uid://cvtokylokpxs1" path="res://assets/style3/sprites/Untitled_Artwork 63.png" id="3_7wtcc"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5857p")
+}],
+"loop": true,
+"name": &"idle1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rjvww")
+}],
+"loop": true,
+"name": &"idle2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7wtcc")
+}],
+"loop": true,
+"name": &"idle3",
+"speed": 5.0
+}]

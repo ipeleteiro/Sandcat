@@ -46,3 +46,6 @@ custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 text = "How about this - I've got a feather I found lying around, I'll give it to you if you manage to entertain my scoundrells for a bit."
 autowrap_mode = 3
+
+[node name="AudioStreamSpeech" type="AudioStreamPlayer2D" parent="."]
+bus = &"OtherSFX"

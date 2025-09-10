@@ -1,27 +1,72 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdfhxuom6gf80"]
+[gd_scene load_steps=34 format=3 uid="uid://c16lo6r8dummv"]
 
-[ext_resource type="Script" uid="uid://bjb61x1mbr5dg" path="res://scripts/waterfall.gd" id="1_0q64d"]
-[ext_resource type="Texture2D" uid="uid://df82g1mn3fsqv" path="res://assets/style1/environment/water.png" id="1_sc057"]
-[ext_resource type="Texture2D" uid="uid://c723xor5hq6bc" path="res://assets/style1/environment/splash.png" id="3_qik8y"]
-[ext_resource type="Texture2D" uid="uid://murytb2dwbke" path="res://assets/style1/environment/cliping_mask.png" id="3_s8yy5"]
+[ext_resource type="Script" uid="uid://cki78sy1nucd0" path="res://scripts/waterfall.gd" id="1_0x3us"]
+[ext_resource type="Texture2D" uid="uid://df82g1mn3fsqv" path="res://assets/style1/environment/water.png" id="2_iqcii"]
+[ext_resource type="Texture2D" uid="uid://c7x1jn6lnw7eh" path="res://assets/style2/environment/water.png" id="3_8t7hd"]
+[ext_resource type="Texture2D" uid="uid://c723xor5hq6bc" path="res://assets/style1/environment/splash.png" id="3_aql7d"]
+[ext_resource type="Script" uid="uid://cg26gw6x70un7" path="res://scenes/environment/water.gd" id="3_iqcii"]
+[ext_resource type="Texture2D" uid="uid://dcj1secpscgmp" path="res://assets/style3/environment/spritesheet (25).png" id="4_s8yy5"]
+[ext_resource type="AudioStream" uid="uid://byqpvwl75qs25" path="res://assets/music/waterflall-335776.mp3" id="7_y3d5w"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8yjnd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0q64d"]
-atlas = ExtResource("1_sc057")
+atlas = ExtResource("2_iqcii")
 region = Rect2(0, 0, 799, 1290)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qik8y"]
-atlas = ExtResource("1_sc057")
+atlas = ExtResource("2_iqcii")
 region = Rect2(2397, 0, 799, 1290)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c8xst"]
-atlas = ExtResource("1_sc057")
+atlas = ExtResource("2_iqcii")
 region = Rect2(1598, 0, 799, 1290)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t7hd"]
-atlas = ExtResource("1_sc057")
+atlas = ExtResource("2_iqcii")
 region = Rect2(799, 0, 799, 1290)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_s8yy5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o6nj"]
+atlas = ExtResource("3_8t7hd")
+region = Rect2(799, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71h5d"]
+atlas = ExtResource("3_8t7hd")
+region = Rect2(3196, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo8sf"]
+atlas = ExtResource("3_8t7hd")
+region = Rect2(6392, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_528rt"]
+atlas = ExtResource("3_8t7hd")
+region = Rect2(2397, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8edog"]
+atlas = ExtResource("3_8t7hd")
+region = Rect2(5593, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4q7x"]
+atlas = ExtResource("3_8t7hd")
+region = Rect2(4794, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_voyv7"]
+atlas = ExtResource("4_s8yy5")
+region = Rect2(4794, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsw4a"]
+atlas = ExtResource("4_s8yy5")
+region = Rect2(2397, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j358q"]
+atlas = ExtResource("4_s8yy5")
+region = Rect2(3196, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwx1v"]
+atlas = ExtResource("4_s8yy5")
+region = Rect2(1598, 0, 799, 1290)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cyj4o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -37,26 +82,87 @@ animations = [{
 "texture": SubResource("AtlasTexture_8t7hd")
 }],
 "loop": true,
-"name": &"default",
+"name": &"default1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o6nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71h5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qo8sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_528rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8edog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4q7x")
+}],
+"loop": true,
+"name": &"default2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_voyv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsw4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j358q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwx1v")
+}],
+"loop": true,
+"name": &"default3",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3d5w"]
-size = Vector2(105, 632)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8yy5"]
-atlas = ExtResource("3_qik8y")
+atlas = ExtResource("3_aql7d")
 region = Rect2(0, 0, 799, 1290)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3d5w"]
-atlas = ExtResource("3_qik8y")
+atlas = ExtResource("3_aql7d")
 region = Rect2(1598, 0, 799, 1290)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxd61"]
-atlas = ExtResource("3_qik8y")
+atlas = ExtResource("3_aql7d")
 region = Rect2(799, 0, 799, 1290)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0o6nj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3tbo"]
+atlas = ExtResource("3_8t7hd")
+region = Rect2(1598, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_re50w"]
+atlas = ExtResource("3_8t7hd")
+region = Rect2(3995, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdov4"]
+atlas = ExtResource("3_8t7hd")
+region = Rect2(0, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wopn"]
+atlas = ExtResource("4_s8yy5")
+region = Rect2(0, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ou4v"]
+atlas = ExtResource("4_s8yy5")
+region = Rect2(799, 0, 799, 1290)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkh7l"]
+atlas = ExtResource("4_s8yy5")
+region = Rect2(3995, 0, 799, 1290)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_137ms"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -69,39 +175,86 @@ animations = [{
 "texture": SubResource("AtlasTexture_fxd61")
 }],
 "loop": true,
-"name": &"default",
+"name": &"default1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3tbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re50w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdov4")
+}],
+"loop": true,
+"name": &"default2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wopn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ou4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkh7l")
+}],
+"loop": true,
+"name": &"default3",
 "speed": 5.0
 }]
 
-[node name="waterfall" type="Node2D"]
-script = ExtResource("1_0q64d")
+[node name="Waterfall" type="Node2D"]
+script = ExtResource("1_0x3us")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="ClipingMask" type="Sprite2D" parent="Area2D"]
+[node name="ClippingMask" type="Sprite2D" parent="."]
 clip_children = 1
-position = Vector2(-2.125, 0.50002)
-scale = Vector2(0.160513, 0.489147)
-texture = ExtResource("3_s8yy5")
+position = Vector2(3.00002, -1.49988)
+scale = Vector2(368, 1287)
+texture = SubResource("CanvasTexture_8yjnd")
 
-[node name="water" type="AnimatedSprite2D" parent="Area2D/ClipingMask"]
+[node name="water1" type="AnimatedSprite2D" parent="ClippingMask"]
 auto_translate_mode = 2
-position = Vector2(0.778667, -5.11098)
-scale = Vector2(1.22515, 1.01451)
-sprite_frames = SubResource("SpriteFrames_s8yy5")
-autoplay = "default"
-frame_progress = 0.655883
+position = Vector2(-0.00815223, 0.00116541)
+scale = Vector2(0.0013587, 0.000777001)
+sprite_frames = SubResource("SpriteFrames_cyj4o")
+animation = &"default3"
+autoplay = "default1"
+frame_progress = 0.445483
+script = ExtResource("3_iqcii")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_y3d5w")
+[node name="water2" type="AnimatedSprite2D" parent="ClippingMask"]
+auto_translate_mode = 2
+position = Vector2(-0.0108696, 0.993395)
+scale = Vector2(0.0013587, 0.000777001)
+sprite_frames = SubResource("SpriteFrames_cyj4o")
+animation = &"default1"
+autoplay = "default1"
+script = ExtResource("3_iqcii")
 
-[node name="splash" type="AnimatedSprite2D" parent="Area2D"]
+[node name="water3" type="AnimatedSprite2D" parent="ClippingMask"]
+auto_translate_mode = 2
+position = Vector2(-0.013587, 1.99262)
+scale = Vector2(0.0013587, 0.000777001)
+sprite_frames = SubResource("SpriteFrames_cyj4o")
+animation = &"default1"
+autoplay = "default1"
+script = ExtResource("3_iqcii")
+
+[node name="splash" type="AnimatedSprite2D" parent="."]
 z_index = 1
-position = Vector2(-2.5, 171.52)
-scale = Vector2(0.211514, 0.231813)
-sprite_frames = SubResource("SpriteFrames_0o6nj")
-autoplay = "default"
-frame_progress = 0.854781
+position = Vector2(-1, 318)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_137ms")
+animation = &"default3"
+autoplay = "default1"
+frame_progress = 0.723669
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[node name="AudioStreamWater" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_y3d5w")
+volume_db = -10.0
+autoplay = true
+bus = &"OtherSFX"
