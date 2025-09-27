@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
 		camera.zoom = camera.zoom.lerp(Vector2(0.8,0.8), 1 * delta)
 		camera.offset = camera.offset.lerp(Vector2(0, -100), 1 * delta) 
 	elif not is_fishing: # camera for fishing dealt with separately
-		camera.zoom = camera.zoom.lerp(Vector2(0.09,0.09), 1 * delta)
+		camera.zoom = camera.zoom.lerp(Vector2(0.5,0.5), 1 * delta)
 		camera.offset = camera.offset.lerp(Vector2(0, -200), 1 * delta)
 	
 	
