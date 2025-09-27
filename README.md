@@ -1,4 +1,4 @@
-# urss_game
+# Sandcat
 
 This game is called Sandcat, a short exploration/platformer/RPG about a cat made of sand looking for revenge against the crows by stealing their feathers.
 The game includes a range of platformer sections with different mechanics expored in each (lying down, working with water, breakable platforms and walls, static and moving crows), a full quest and dialogue system with 9 characters to interact with, and two minigames (fishing and ball-bouncing). 
